@@ -1,14 +1,12 @@
 module ID_EXE_Reg(
     input logic clk,              	// Reloj del sistema
     input logic reset,            	// Reset asíncrono
-    input logic stall,            	// Señal de detención
-    input logic flush,            	// Señal de vaciado (flush) para control de hazards
 	 
     input logic [31:0] pc_in,     	// Valor de PC de la etapa IF
     input logic [31:0] pc_plus4_in, // Valor de PC+4 de la etapa IF
 	 input logic [31:0] op1_in,     	// Operando 1
 	 input logic [31:0] op2_in,     	// Operando 2
-	 input logic [31:0] rd_in,     	// Registro destino
+	 input logic [4:0] rd_in,     	// Registro destino
 	 input logic [31:0] extend_in,   // Valor de PC de la etapa IF
 	 
 	 // agregar aca las se;ales del control unit	 in/out
@@ -17,8 +15,8 @@ module ID_EXE_Reg(
     output logic [31:0] pc_plus4_out,  // Valor de PC+4 almacenado
 	 output logic [31:0] op1_out,     	// Operando 1
 	 output logic [31:0] op2_out,     	// Operando 2
-	 output logic [31:0] rd_out,     	// Registro destino
-	 output logic [31:0] extend_out,    // Valor de PC de la etapa IF
+	 output logic [4:0] rd_out,     	// Registro destino
+	 output logic [31:0] extend_out    // Valor de PC de la etapa IF
 	 
 	  
 );
@@ -26,7 +24,7 @@ module ID_EXE_Reg(
     // Define registros internos para almacenar los valores entre etapas
     logic [31:0] pc_reg;
     logic [31:0] pc_plus4_reg;
-	 logic [31:0] rd_reg;
+	 logic [4:0] rd_reg;
 	 logic [31:0] op1_reg;
 	 logic [31:0] op2_reg;
 	 logic [31:0] ext_reg;
@@ -38,17 +36,13 @@ module ID_EXE_Reg(
         if (reset) begin					// Limpia los registros si la señal de reset está activa
             pc_reg <= 32'b0;
             pc_plus4_reg <= 32'b0;
-				rd_reg <= 32'b0;
+				rd_reg <= 5'b0;
 				ext_reg <= 32'b0;
 				op1_reg <= 32'b0;
 				op2_reg <= 32'b0;
 				
-        end else if (flush) begin 		// Vacia los registros si la señal flush está activa
-            pc_reg <= 32'b0;
-            pc_plus4_reg <= 32'b0;
 				
-				
-        end else if (!stall) begin 		// Actualiza los registros solo si no hay stall
+        end else begin 		// Actualiza los registros
             pc_reg <= pc_in;
             pc_plus4_reg <= pc_plus4_in;
 				rd_reg <= rd_in;

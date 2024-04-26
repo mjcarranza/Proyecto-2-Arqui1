@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IF_ID_Reg
-Tue Apr 16 12:31:22 2024
+Fri Apr 19 12:13:11 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,10 +14,9 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -44,14 +43,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue Apr 16 12:31:22 2024       ;
+; Analysis & Synthesis Status     ; Successful - Fri Apr 19 12:13:11 2024       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; IF_ID_Reg                                   ;
-; Top-level Entity Name           ; IF_ID_Reg                                   ;
+; Top-level Entity Name           ; EXE_MEM_Reg                                 ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 96                                          ;
-; Total pins                      ; 196                                         ;
+; Total registers                 ; 104                                         ;
+; Total pins                      ; 210                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -70,7 +69,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; IF_ID_Reg          ; IF_ID_Reg          ;
+; Top-level entity name                                                           ; EXE_MEM_Reg        ; IF_ID_Reg          ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -167,40 +166,40 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
-; IF_ID_Reg.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/IF_ID_Reg.sv ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
+; EXE_MEM_Reg.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/EXE_MEM_Reg.sv ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 49          ;
-;                                             ;             ;
-; Combinational ALUT usage for logic          ; 1           ;
-;     -- 7 input functions                    ; 0           ;
-;     -- 6 input functions                    ; 0           ;
-;     -- 5 input functions                    ; 0           ;
-;     -- 4 input functions                    ; 0           ;
-;     -- <=3 input functions                  ; 1           ;
-;                                             ;             ;
-; Dedicated logic registers                   ; 96          ;
-;                                             ;             ;
-; I/O pins                                    ; 196         ;
-;                                             ;             ;
-; Total DSP Blocks                            ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; flush~input ;
-; Maximum fan-out                             ; 97          ;
-; Total fan-out                               ; 774         ;
-; Average fan-out                             ; 1.58        ;
-+---------------------------------------------+-------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 52        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 0         ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 0         ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 104       ;
+;                                             ;           ;
+; I/O pins                                    ; 210       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 104       ;
+; Total fan-out                               ; 626       ;
+; Average fan-out                             ; 1.19      ;
++---------------------------------------------+-----------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -208,7 +207,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |IF_ID_Reg                 ; 1 (1)               ; 96 (96)                   ; 0                 ; 0          ; 196  ; 0            ; |IF_ID_Reg          ; IF_ID_Reg   ; work         ;
+; |EXE_MEM_Reg               ; 0 (0)               ; 104 (104)                 ; 0                 ; 0          ; 210  ; 0            ; |EXE_MEM_Reg        ; EXE_MEM_Reg ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -218,40 +217,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 96    ;
-; Number of registers using Synchronous Clear  ; 96    ;
+; Total registers                              ; 104   ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 96    ;
+; Number of registers using Asynchronous Clear ; 104   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 96    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 96 bits   ; 192 LEs       ; 0 LEs                ; 192 LEs                ; Yes        ; |IF_ID_Reg|pc_reg[0]       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 96                          ;
-;     ENA CLR SCLR      ; 96                          ;
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         2 data inputs ; 1                           ;
-; boundary_port         ; 196                         ;
-;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 0.02                        ;
-+-----------------------+-----------------------------+
++-------------------+---------------------------------+
+; Type              ; Count                           ;
++-------------------+---------------------------------+
+; arriav_ff         ; 104                             ;
+;     CLR           ; 104                             ;
+; boundary_port     ; 210                             ;
+;                   ;                                 ;
+; Max LUT depth     ; 0.00                            ;
+; Average LUT depth ; 0.00                            ;
++-------------------+---------------------------------+
 
 
 +-------------------------------+
@@ -269,24 +256,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Tue Apr 16 12:31:11 2024
+    Info: Processing started: Fri Apr 19 12:13:03 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IF_ID_Reg -c IF_ID_Reg
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file if_id_reg.sv
     Info (12023): Found entity 1: IF_ID_Reg File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/IF_ID_Reg.sv Line: 1
-Info (12127): Elaborating entity "IF_ID_Reg" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file id_exe_reg.sv
+    Info (12023): Found entity 1: ID_EXE_Reg File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/ID_EXE_Reg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file exe_mem_reg.sv
+    Info (12023): Found entity 1: EXE_MEM_Reg File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/EXE_MEM_Reg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mem_wb_reg.sv
+    Info (12023): Found entity 1: MEM_WB_Reg File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/MEM_WB_Reg.sv Line: 1
+Info (12127): Elaborating entity "EXE_MEM_Reg" for the top level hierarchy
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 293 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 100 input pins
-    Info (21059): Implemented 96 output pins
-    Info (21061): Implemented 97 logic cells
+Info (21057): Implemented 314 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 106 input pins
+    Info (21059): Implemented 104 output pins
+    Info (21061): Implemented 104 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Tue Apr 16 12:31:22 2024
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Peak virtual memory: 4839 megabytes
+    Info: Processing ended: Fri Apr 19 12:13:11 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:08
 
 

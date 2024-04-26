@@ -1,11 +1,11 @@
 module IF_ID_Reg(
     input logic clk,              // Reloj del sistema
     input logic reset,            // Reset asíncrono
-    input logic stall,            // Señal de detención
-    input logic flush,            // Señal de vaciado (flush) para control de hazards
-    input logic [31:0] pc_in,     // Valor de PC de la etapa IF
+    
+	 input logic [31:0] pc_in,     // Valor de PC de la etapa IF
     input logic [31:0] pc_plus4_in, // Valor de PC+4 de la etapa IF
     input logic [31:0] instruction_in, // Instrucción de la etapa IF
+	 
     output logic [31:0] pc_out,         // Valor de PC almacenado
     output logic [31:0] pc_plus4_out,   // Valor de PC+4 almacenado
     output logic [31:0] instruction_out // Instrucción almacenada
@@ -23,13 +23,8 @@ module IF_ID_Reg(
             pc_reg <= 32'b0;
             pc_plus4_reg <= 32'b0;
             instruction_reg <= 32'b0;
-        end else if (flush) begin
-            // Vacia los registros si la señal flush está activa
-            pc_reg <= 32'b0;
-            pc_plus4_reg <= 32'b0;
-            instruction_reg <= 32'b0;
-        end else if (!stall) begin
-            // Actualiza los registros solo si no hay stall
+        end else begin
+            // Actualiza los registros
             pc_reg <= pc_in;
             pc_plus4_reg <= pc_plus4_in;
             instruction_reg <= instruction_in;
