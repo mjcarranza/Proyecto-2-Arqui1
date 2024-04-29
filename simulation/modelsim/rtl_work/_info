@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/simulation/modelsim
+vcompuerta
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1714412618
+!i10b 1
+!s100 gHY2VR3aCeSVm3Y^I1boF0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I`JV4X?IA<I]1hFC]Ri<4b0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1714412494
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv
+!i122 0
+L0 1 15
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1714412618.000000
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv|
+!i113 1
+Z7 o-sv -work work
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute
+Z8 tCvgOpt 0
+vcompuerta_tb
+R1
+R2
+!i10b 1
+!s100 ^CeBfaY<k53kMRJACDeil2
+R3
+IaVX6VcmT]A_dLcfY>Almn1
+R4
+S1
+R0
+w1714412542
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv
+!i122 1
+L0 1 50
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
+R8
