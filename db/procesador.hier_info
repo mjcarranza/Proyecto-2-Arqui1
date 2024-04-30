@@ -1,7 +1,35 @@
-|compuerta
-zeroE => resAND.IN0
-jumpE => pcSrcE.IN1
-branchE => resAND.IN1
-pcSrcE <= pcSrcE.DB_MAX_OUTPUT_PORT_TYPE
+|extend
+Instr[0] => ExtImm[0].DATAIN
+Instr[1] => ExtImm[1].DATAIN
+Instr[2] => ExtImm[2].DATAIN
+Instr[3] => ExtImm[3].DATAIN
+Instr[4] => ExtImm[4].DATAIN
+Instr[5] => ExtImm[5].DATAIN
+Instr[6] => ExtImm[6].DATAIN
+Instr[6] => ExtImm[15].DATAIN
+Instr[6] => ExtImm[14].DATAIN
+Instr[6] => ExtImm[13].DATAIN
+Instr[6] => ExtImm[12].DATAIN
+Instr[6] => ExtImm[11].DATAIN
+Instr[6] => ExtImm[10].DATAIN
+Instr[6] => ExtImm[9].DATAIN
+Instr[6] => ExtImm[8].DATAIN
+Instr[6] => ExtImm[7].DATAIN
+ExtImm[0] <= Instr[0].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[1] <= Instr[1].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[2] <= Instr[2].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[3] <= Instr[3].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[4] <= Instr[4].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[5] <= Instr[5].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[6] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[7] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[8] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[9] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[10] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[11] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[12] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[13] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[14] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
+ExtImm[15] <= Instr[6].DB_MAX_OUTPUT_PORT_TYPE
 
 
