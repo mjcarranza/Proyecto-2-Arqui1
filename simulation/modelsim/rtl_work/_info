@@ -9,55 +9,57 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/simulation/modelsim
-vextend
+vID_EXE_Reg
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1714429088
+Z2 !s110 1714538146
 !i10b 1
-!s100 QS61lAN@KYPL1f9hiAmA80
+!s100 N?Q6^Vncj_a;nbSX1O]1g1
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-ILSFKao^Y1Y1Tij`FPOej03
+I4VV;0VZgoGa^1i<5><Rko3
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1714428912
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv
+w1714537515
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv
 !i122 0
-L0 1 8
+L0 1 63
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1714429088.000000
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv|
+Z6 !s108 1714538146.000000
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv|
 !i113 1
 Z7 o-sv -work work
 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode
 Z8 tCvgOpt 0
-vextend_tb
+n@i@d_@e@x@e_@reg
+vID_EXE_Reg_tb
 R1
 R2
 !i10b 1
-!s100 411F`^kK;0lf<I7Sc3]VO0
+!s100 `S8k;TKbCa:3nk=OH^lTD1
 R3
-Im9Jn;18YB<cfM@9?L>lUE1
+IeJ^]0InVNkM==7;<9LLg52
 R4
 S1
 R0
-w1714429046
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/extend_tb.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/extend_tb.sv
+w1714538126
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv
 !i122 1
-L0 3 27
+L0 3 83
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/extend_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/extend_tb.sv|
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv|
 !i113 1
 R7
 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
 R8
+n@i@d_@e@x@e_@reg_tb

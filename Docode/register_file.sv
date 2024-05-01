@@ -1,7 +1,7 @@
 
 module register_file(input logic clk, rst, regWrite, 
 							input logic [3:0] A1, A2, A3, 
-							input logic [15:0] WD3, R15,
+							input logic [15:0] WD3,
 							output logic [15:0] RD1, RD2);
 		// # bits         // # registros			
 	logic [15:0] registers [15:0];
@@ -38,8 +38,6 @@ module register_file(input logic clk, rst, regWrite,
 				registers[A3] <= WD3; // WD3 contiene el valor del registro 
 			
 			end
-			
-			registers[15] <= R15; // cambiar esto
 			
 		end
 	

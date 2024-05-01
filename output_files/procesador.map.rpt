@@ -1,5 +1,5 @@
-Analysis & Elaboration report for procesador
-Mon Apr 29 16:17:59 2024
+Analysis & Synthesis report for procesador
+Tue Apr 30 23:33:42 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -7,10 +7,25 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 ; Table of Contents ;
 ---------------------
   1. Legal Notice
-  2. Analysis & Elaboration Summary
-  3. Parallel Compilation
-  4. Analysis & Elaboration Settings
-  5. Analysis & Elaboration Messages
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Source assignments for IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated
+ 12. Parameter Settings for User Entity Instance: new_clk:frec_clk
+ 13. Parameter Settings for User Entity Instance: IMem:IMem_inst|altsyncram:altsyncram_component
+ 14. altsyncram Parameter Settings by Entity Instance
+ 15. Port Connectivity Checks: "ID_EXE_Reg:decode"
+ 16. Port Connectivity Checks: "IMem:IMem_inst"
+ 17. Port Connectivity Checks: "sumador:sum_inst"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -34,47 +49,36 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Elaboration Summary                                              ;
-+-------------------------------+---------------------------------------------+
-; Analysis & Elaboration Status ; Successful - Mon Apr 29 16:17:59 2024       ;
-; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                 ; procesador                                  ;
-; Top-level Entity Name         ; extend                                      ;
-; Family                        ; Cyclone V                                   ;
-; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
-; Total registers               ; N/A until Partition Merge                   ;
-; Total pins                    ; N/A until Partition Merge                   ;
-; Total virtual pins            ; N/A until Partition Merge                   ;
-; Total block memory bits       ; N/A until Partition Merge                   ;
-; Total PLLs                    ; N/A until Partition Merge                   ;
-; Total DLLs                    ; N/A until Partition Merge                   ;
-+-------------------------------+---------------------------------------------+
-
-
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 16          ;
-; Maximum allowed            ; 12          ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-+----------------------------+-------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Apr 30 23:33:42 2024       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; procesador                                  ;
+; Top-level Entity Name           ; procesador                                  ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 31                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Elaboration Settings                                                                                           ;
+; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; extend             ; procesador         ;
+; Top-level entity name                                                           ; procesador         ; procesador         ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -155,14 +159,303 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+---------------------------------+
-; Analysis & Elaboration Messages ;
-+---------------------------------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 12          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
++-------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path    ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                          ; Library ;
++-------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
+; InstructionFetch/sumador.sv         ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/sumador.sv         ;         ;
+; InstructionFetch/program_counter.sv ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/program_counter.sv ;         ;
+; InstructionFetch/mux2_1.sv          ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/mux2_1.sv          ;         ;
+; InstructionFetch/IF_ID_Reg.sv       ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IF_ID_Reg.sv       ;         ;
+; procesador.sv                       ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv                       ;         ;
+; new_clk.sv                          ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/new_clk.sv                          ;         ;
+; Docode/extend.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv                    ;         ;
+; Docode/register_file.sv             ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/register_file.sv             ;         ;
+; Docode/Control_Unit.sv              ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv              ;         ;
+; Docode/ID_EXE_Reg.sv                ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv                ;         ;
+; imem.v                              ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v                              ;         ;
+; altsyncram.tdf                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                 ;         ;
+; stratix_ram_block.inc               ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc          ;         ;
+; lpm_mux.inc                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc                    ;         ;
+; lpm_decode.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc                 ;         ;
+; aglobal201.inc                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc                 ;         ;
+; a_rdenreg.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc                  ;         ;
+; altrom.inc                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc                     ;         ;
+; altram.inc                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc                     ;         ;
+; altdpram.inc                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc                   ;         ;
+; db/altsyncram_88o1.tdf              ; yes             ; Auto-Generated Megafunction            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf              ;         ;
+; imem.mif                            ; yes             ; Auto-Found Memory Initialization File  ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.mif                            ;         ;
++-------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimate of Logic utilization (ALMs needed) ; 0       ;
+;                                             ;         ;
+; Combinational ALUT usage for logic          ; 0       ;
+;     -- 7 input functions                    ; 0       ;
+;     -- 6 input functions                    ; 0       ;
+;     -- 5 input functions                    ; 0       ;
+;     -- 4 input functions                    ; 0       ;
+;     -- <=3 input functions                  ; 0       ;
+;                                             ;         ;
+; Dedicated logic registers                   ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 31      ;
+;                                             ;         ;
+; Total DSP Blocks                            ; 0       ;
+;                                             ;         ;
+; Maximum fan-out node                        ; clkFPGA ;
+; Maximum fan-out                             ; 1       ;
+; Total fan-out                               ; 31      ;
+; Average fan-out                             ; 0.50    ;
++---------------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |procesador                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 31   ; 0            ; |procesador         ; procesador  ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------+
+; Registers Removed During Synthesis                          ;
++----------------------------------------+--------------------+
+; Register name                          ; Reason for Removal ;
++----------------------------------------+--------------------+
+; program_counter:pc_inst|q[0..7]        ; Lost fanout        ;
+; new_clk:frec_clk|seconds               ; Lost fanout        ;
+; new_clk:frec_clk|count[0..31]          ; Lost fanout        ;
+; Total Number of Removed Registers = 41 ;                    ;
++----------------------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                             ;
++------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; Register name                ; Reason for Removal ; Registers Removed due to This Register                                              ;
++------------------------------+--------------------+-------------------------------------------------------------------------------------+
+; program_counter:pc_inst|q[0] ; Lost Fanouts       ; new_clk:frec_clk|seconds, new_clk:frec_clk|count[4], new_clk:frec_clk|count[24],    ;
+;                              ;                    ; new_clk:frec_clk|count[25], new_clk:frec_clk|count[26], new_clk:frec_clk|count[27], ;
+;                              ;                    ; new_clk:frec_clk|count[28], new_clk:frec_clk|count[29], new_clk:frec_clk|count[30], ;
+;                              ;                    ; new_clk:frec_clk|count[31]                                                          ;
++------------------------------+--------------------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Source assignments for IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated ;
++---------------------------------+--------------------+------+----------------------------------------+
+; Assignment                      ; Value              ; From ; To                                     ;
++---------------------------------+--------------------+------+----------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                      ;
++---------------------------------+--------------------+------+----------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: new_clk:frec_clk ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; frec           ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: IMem:IMem_inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+---------------------------------+
+; Parameter Name                     ; Value                ; Type                            ;
++------------------------------------+----------------------+---------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                         ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                      ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                    ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                    ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                  ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                         ;
+; OPERATION_MODE                     ; SINGLE_PORT          ; Untyped                         ;
+; WIDTH_A                            ; 16                   ; Signed Integer                  ;
+; WIDTHAD_A                          ; 9                    ; Signed Integer                  ;
+; NUMWORDS_A                         ; 512                  ; Signed Integer                  ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                         ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                         ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                         ;
+; WIDTH_B                            ; 1                    ; Untyped                         ;
+; WIDTHAD_B                          ; 1                    ; Untyped                         ;
+; NUMWORDS_B                         ; 1                    ; Untyped                         ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                         ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                         ;
+; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                         ;
+; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                         ;
+; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                         ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                         ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                         ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                         ;
+; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                         ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                         ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                  ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                         ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                         ;
+; BYTE_SIZE                          ; 8                    ; Untyped                         ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                         ;
+; INIT_FILE                          ; iMem.mif             ; Untyped                         ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                         ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_A              ; BYPASS               ; Untyped                         ;
+; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                         ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                         ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                         ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                         ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                         ;
+; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                         ;
+; CBXI_PARAMETER                     ; altsyncram_88o1      ; Untyped                         ;
++------------------------------------+----------------------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                           ;
++-------------------------------------------+------------------------------------------------+
+; Name                                      ; Value                                          ;
++-------------------------------------------+------------------------------------------------+
+; Number of entity instances                ; 1                                              ;
+; Entity Instance                           ; IMem:IMem_inst|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; SINGLE_PORT                                    ;
+;     -- WIDTH_A                            ; 16                                             ;
+;     -- NUMWORDS_A                         ; 512                                            ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                   ;
+;     -- WIDTH_B                            ; 1                                              ;
+;     -- NUMWORDS_B                         ; 1                                              ;
+;     -- ADDRESS_REG_B                      ; CLOCK1                                         ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                   ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                           ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                      ;
++-------------------------------------------+------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_EXE_Reg:decode"                                                                            ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port           ; Type   ; Severity ; Details                                                                             ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+; pc_out         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pc_plus2_out   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; op1_out        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; op2_out        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; rd_out         ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; extend_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; regWrite_out   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; memWrite_out   ; Output ; Info     ; Explicitly unconnected                                                              ;
+; jump_out       ; Output ; Info     ; Explicitly unconnected                                                              ;
+; branch_out     ; Output ; Info     ; Explicitly unconnected                                                              ;
+; aluSrc_out     ; Output ; Info     ; Explicitly unconnected                                                              ;
+; resultSrc_out  ; Output ; Info     ; Explicitly unconnected                                                              ;
+; aluControl_out ; Output ; Info     ; Explicitly unconnected                                                              ;
++----------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "IMem:IMem_inst"                                                                                                                                   ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; address ; Input ; Warning  ; Input port expression (8 bits) is smaller than the input port (9 bits) it drives.  Extra input bit(s) "address[8..8]" will be connected to GND. ;
+; data    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
+; wren    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.    ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "sumador:sum_inst" ;
++----------+-------+----------+----------------+
+; Port     ; Type  ; Severity ; Details        ;
++----------+-------+----------+----------------+
+; B[15..2] ; Input ; Info     ; Stuck at GND   ;
+; B[1]     ; Input ; Info     ; Stuck at VCC   ;
+; B[0]     ; Input ; Info     ; Stuck at GND   ;
++----------+-------+----------+----------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
+; boundary_port         ; 31                          ;
+;                       ;                             ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus Prime Analysis & Elaboration
+Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Apr 29 16:17:52 2024
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off procesador -c procesador --analysis_and_elaboration
+    Info: Processing started: Tue Apr 30 23:33:34 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off procesador -c procesador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file testbench/sumador_tb.sv
@@ -207,11 +500,116 @@ Info (12021): Found 1 design units, including 1 entities, in source file execute
     Info (12023): Found entity 1: compuerta File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench/compuerta_tb.sv
     Info (12023): Found entity 1: compuerta_tb File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv Line: 1
-Info (12127): Elaborating entity "extend" for the top level hierarchy
-Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4773 megabytes
-    Info: Processing ended: Mon Apr 29 16:17:59 2024
-    Info: Elapsed time: 00:00:07
+Info (12021): Found 1 design units, including 1 entities, in source file testbench/control_unit_tb.sv
+    Info (12023): Found entity 1: Control_Unit_tb File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/Control_Unit_tb.sv Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file docode/id_exe_reg.sv
+    Info (12023): Found entity 1: ID_EXE_Reg File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file testbench/id_exe_reg_tb.sv
+    Info (12023): Found entity 1: ID_EXE_Reg_tb File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv Line: 3
+Info (12127): Elaborating entity "procesador" for the top level hierarchy
+Warning (10034): Output port "r" at procesador.sv(5) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+Warning (10034): Output port "g" at procesador.sv(5) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+Warning (10034): Output port "b" at procesador.sv(5) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+Warning (10034): Output port "vgaclk" at procesador.sv(2) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 2
+Warning (10034): Output port "hsync" at procesador.sv(3) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 3
+Warning (10034): Output port "vsync" at procesador.sv(3) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 3
+Warning (10034): Output port "sync_b" at procesador.sv(4) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 4
+Warning (10034): Output port "blank_b" at procesador.sv(4) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 4
+Info (12128): Elaborating entity "new_clk" for hierarchy "new_clk:frec_clk" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 18
+Info (12128): Elaborating entity "mux2_1" for hierarchy "mux2_1:muxPC" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 25
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:pc_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 28
+Info (12128): Elaborating entity "sumador" for hierarchy "sumador:sum_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 31
+Warning (12125): Using design file imem.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: IMem File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 40
+Info (12128): Elaborating entity "IMem" for hierarchy "IMem:IMem_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 34
+Info (12128): Elaborating entity "altsyncram" for hierarchy "IMem:IMem_inst|altsyncram:altsyncram_component" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 86
+Info (12130): Elaborated megafunction instantiation "IMem:IMem_inst|altsyncram:altsyncram_component" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 86
+Info (12133): Instantiated megafunction "IMem:IMem_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 86
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_a" = "BYPASS"
+    Info (12134): Parameter "init_file" = "iMem.mif"
+    Info (12134): Parameter "intended_device_family" = "Cyclone V"
+    Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "512"
+    Info (12134): Parameter "operation_mode" = "SINGLE_PORT"
+    Info (12134): Parameter "outdata_aclr_a" = "NONE"
+    Info (12134): Parameter "outdata_reg_a" = "UNREGISTERED"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "read_during_write_mode_port_a" = "NEW_DATA_NO_NBE_READ"
+    Info (12134): Parameter "widthad_a" = "9"
+    Info (12134): Parameter "width_a" = "16"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_88o1.tdf
+    Info (12023): Found entity 1: altsyncram_88o1 File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 28
+Info (12128): Elaborating entity "altsyncram_88o1" for hierarchy "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12128): Elaborating entity "IF_ID_Reg" for hierarchy "IF_ID_Reg:fetch" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 43
+Info (12128): Elaborating entity "extend" for hierarchy "extend:ext_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 48
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:regFile_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 60
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:control_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 71
+Info (12128): Elaborating entity "ID_EXE_Reg" for hierarchy "ID_EXE_Reg:decode" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 99
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[0]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 37
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[1]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 61
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[2]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 85
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[3]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 109
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[4]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 133
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[5]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 157
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[6]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 181
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[7]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 205
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[8]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 229
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[9]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 253
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[10]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 277
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[11]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 301
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[12]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 325
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[13]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 349
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[14]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 373
+        Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[15]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 397
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "vgaclk" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 2
+    Warning (13410): Pin "hsync" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 3
+    Warning (13410): Pin "vsync" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 3
+    Warning (13410): Pin "sync_b" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 4
+    Warning (13410): Pin "blank_b" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 4
+    Warning (13410): Pin "r[0]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[1]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[2]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[3]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[4]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[5]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[6]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "r[7]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[0]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[1]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[2]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[3]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[4]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[5]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[6]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "g[7]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[0]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[1]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[2]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[3]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[4]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[5]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[6]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+    Warning (13410): Pin "b[7]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+Info (17049): 41 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clkFPGA" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 1
+    Warning (15610): No output dependent on input pin "rst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 1
+Info (21057): Implemented 31 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 29 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 62 warnings
+    Info: Peak virtual memory: 4809 megabytes
+    Info: Processing ended: Tue Apr 30 23:33:42 2024
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:08
 
 

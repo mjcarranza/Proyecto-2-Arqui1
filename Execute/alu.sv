@@ -27,7 +27,7 @@ module alu(
 		
 		endcase 
 		
-	compare #(.width(32)) dut_compare(A, B, sel[0], negative);
+
 		
 	// resultado de la alu
 	assign alu_out = alu_out_temp;

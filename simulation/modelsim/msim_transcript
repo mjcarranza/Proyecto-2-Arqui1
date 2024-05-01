@@ -10,34 +10,36 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv}
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:18:08 on Apr 29,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv 
-# -- Compiling module extend
+# Start time: 22:35:46 on Apr 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv 
+# -- Compiling module ID_EXE_Reg
 # 
 # Top level modules:
-# 	extend
-# End time: 16:18:08 on Apr 29,2024, Elapsed time: 0:00:00
+# 	ID_EXE_Reg
+# End time: 22:35:46 on Apr 30,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/extend_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:18:08 on Apr 29,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/extend_tb.sv 
-# -- Compiling module extend_tb
+# Start time: 22:35:46 on Apr 30,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv 
+# -- Compiling module ID_EXE_Reg_tb
 # 
 # Top level modules:
-# 	extend_tb
-# End time: 16:18:08 on Apr 29,2024, Elapsed time: 0:00:00
+# 	ID_EXE_Reg_tb
+# End time: 22:35:46 on Apr 30,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  extend_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" extend_tb 
-# Start time: 16:18:08 on Apr 29,2024
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ID_EXE_Reg_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ID_EXE_Reg_tb 
+# Start time: 22:35:46 on Apr 30,2024
 # Loading sv_std.std
-# Loading work.extend_tb
-# Loading work.extend
+# Loading work.ID_EXE_Reg_tb
+# Loading work.ID_EXE_Reg
+# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (4) for port 'rd_out'. The port definition is at: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /ID_EXE_Reg_tb/dut File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv Line: 23
 # 
 # add wave *
 # view structure
@@ -45,5 +47,7 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
-# End time: 16:18:55 on Apr 29,2024, Elapsed time: 0:00:47
-# Errors: 0, Warnings: 0
+# Break key hit
+# Simulation stop requested.
+# End time: 22:38:08 on Apr 30,2024, Elapsed time: 0:02:22
+# Errors: 0, Warnings: 1
