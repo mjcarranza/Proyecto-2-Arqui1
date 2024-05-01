@@ -5,12 +5,13 @@ module procesador(input logic clkFPGA, rst,
 			output logic [7:0] r, g, b);
 
 	logic [15:0] pc, pc_out, Inst, PCPlus2F, PCPlus2, PCTargetE, extended, extendedE, RD1E, RD2E;
-	logic [15:0] pcStageIn, PCD, PCE, pcP2In, PCPlus2D, PCPlus2E, instDeco, dataDeco1, dataDeco2, resultWB;
-	logic PCSrcE, memWriteDeco, regWriteWB, regWriteDeco;
-	logic jumpDeco, branchDeco, aluSrcDeco;
+	logic [15:0] pcStageIn, PCD, PCE, pcP2In, PCPlus2D, PCPlus2E, PCPlus2M, PCPlus2W, instDeco, dataDeco1, dataDeco2, resultWB;
+	logic [15:0] aluResM, aluResW, writeDataM, readDataM, readDataW;
+	logic PCSrcE, memWriteDeco, regWriteWB, regWriteM, regWriteDeco, memWriteM;
+	logic jumpDeco, branchDeco, aluSrcDeco, resultSrcM, resultSrcW;
 	logic [1:0] resultSrcDeco;
 	logic [2:0] aluControlDeco;
-	logic [3:0] RdestE, RdestW;
+	logic [3:0] RdestE, RdestW, RdestM;
  
 	logic clk, clk_mem, clk_rom;
 	
@@ -97,5 +98,46 @@ module procesador(input logic clkFPGA, rst,
 							.resultSrc_out(),
 							.aluControl_out()
 							);
-
+	// ------------------------------------- Etapa de ejecucion ---------------------------------- //
+	// ------------------------------------- Etapa de memoria ------------------------------------ //
+	
+	// instancia de la memoria para datos
+	DataMem dataMem_inst(.address(aluResM),
+								.clock(clk),
+								.data(writeDataM),
+								.wren(memWriteM),
+								.q(readDataM)
+								);
+								
+	// instancia del registro de memoria
+	MEM_WB_Reg memory(
+						   .clk(clk),
+							.reset(rst),
+							
+							.regWrite_in(regWriteM),
+							.resultSrc_in(resultSrcM),
+							.pc_plus2_in(PCPlus2M),
+							.rd_in(RdestM),
+							.aluRes_in(aluResM),
+							.readData_in(readDataM),
+							
+							.regWrite_out(regWriteWB),
+							.resultSrc_out(resultSrcW),
+							.pc_plus2_out(PCPlus2W),
+							.rd_out(RdestW),
+							.aluRes_out(aluResW),
+							.readData_out(readDataW)
+							);
+							
+	// -------------------------------- Etapa de write back ------------------------------------ //
+	
+	// instancia de mux 3-1
+	mux_WB mux3a1_inst(	.data0(aluResW),
+								.data1(readDataW),
+								.data2(PCPlus2W),
+								.select(resultSrcW),
+								.result(resultWB)
+								);
+	
+			
 endmodule 

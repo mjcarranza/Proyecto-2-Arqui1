@@ -1,5 +1,5 @@
 Flow report for procesador
-Tue Apr 30 23:33:42 2024
+Wed May 01 12:47:36 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,25 +41,25 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Tue Apr 30 23:33:42 2024       ;
+; Flow Status                     ; Successful - Wed May 01 12:47:36 2024       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; procesador                                  ;
 ; Top-level Entity Name           ; procesador                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
+; Logic utilization (in ALMs)     ; 1 / 32,070 ( < 1 % )                        ;
 ; Total registers                 ; 0                                           ;
-; Total pins                      ; 31                                          ;
+; Total pins                      ; 31 / 457 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
+; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
+; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
+; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
+; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 04/30/2024 23:33:34 ;
+; Start date & time ; 05/01/2024 12:46:36 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; procesador          ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id         ;
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
-; COMPILER_SIGNATURE_ID                ; 9413559726409.171454161414472          ; --            ; --          ; --                 ;
+; COMPILER_SIGNATURE_ID                ; 1095957914728.171458919515256          ; --            ; --          ; --                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; IF_ID_Reg_tb       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; compuerta_tb       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; program_counter_tb ;
@@ -123,6 +123,7 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation     ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                 ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                 ;
+; MISC_FILE                            ; Memory/DataMem_bb.v                    ; --            ; --          ; --                 ;
 ; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top                ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top                ;
 ; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top                ;
@@ -137,8 +138,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4797 MB             ; 00:00:08                           ;
-; Total                ; 00:00:08     ; --                      ; --                  ; 00:00:08                           ;
+; Analysis & Synthesis ; 00:00:08     ; 1.0                     ; 4803 MB             ; 00:00:09                           ;
+; Fitter               ; 00:00:35     ; 1.0                     ; 7264 MB             ; 00:00:47                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4841 MB             ; 00:00:04                           ;
+; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 5223 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4727 MB             ; 00:00:01                           ;
+; Total                ; 00:00:56     ; --                      ; --                  ; 00:01:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -148,6 +153,10 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; MJCLOQ           ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; MJCLOQ           ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; MJCLOQ           ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; MJCLOQ           ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; MJCLOQ           ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -155,6 +164,10 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off procesador -c procesador
+quartus_fit --read_settings_files=off --write_settings_files=off procesador -c procesador
+quartus_asm --read_settings_files=off --write_settings_files=off procesador -c procesador
+quartus_sta procesador -c procesador
+quartus_eda --read_settings_files=off --write_settings_files=off procesador -c procesador
 
 
 
