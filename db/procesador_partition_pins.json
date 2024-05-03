@@ -2,7 +2,276 @@
 	"partitions" : [
 		{
 			"name" : "Top",
-			"pins" : []
+			"pins" : [
+				{
+					"name" : "InstrD[0]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[1]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[2]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[3]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[4]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[5]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[6]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[7]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[8]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[9]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[10]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[11]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[12]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[13]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[14]",
+					"strict" : false
+				},
+				{
+					"name" : "InstrD[15]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2D[15]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[0]",
+					"strict" : false
+				},
+				{
+					"name" : "PCSrcE",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[1]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[2]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[3]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[4]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[5]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[6]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[8]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[9]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[10]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[11]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[12]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[13]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[14]",
+					"strict" : false
+				},
+				{
+					"name" : "PCTargetE[15]",
+					"strict" : false
+				},
+				{
+					"name" : "PCPlus2F[15]",
+					"strict" : false
+				}
+			]
 		}
 	]
 }

@@ -9,57 +9,107 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/simulation/modelsim
-vID_EXE_Reg
-Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1714538146
+vDataMem
+Z1 !s110 1714724398
 !i10b 1
-!s100 N?Q6^Vncj_a;nbSX1O]1g1
-Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I4VV;0VZgoGa^1i<5><Rko3
-Z4 VDg1SIo80bB@j0V0VzS_@n1
-S1
+!s100 ^j5W?1][<HNf;F0<eB9iO2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IzDCH:n7RG;`3d[P7J>N>91
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1714537515
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv
+w1714584117
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v
 !i122 0
-L0 1 63
-Z5 OV;L;2020.1;71
+L0 40 66
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1714538146.000000
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv|
+Z5 !s108 1714724398.000000
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v|
 !i113 1
-Z7 o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode
-Z8 tCvgOpt 0
-n@i@d_@e@x@e_@reg
-vID_EXE_Reg_tb
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory
+Z6 tCvgOpt 0
+n@data@mem
+vMEM_WB_Reg
+Z7 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
 R1
-R2
 !i10b 1
-!s100 `S8k;TKbCa:3nk=OH^lTD1
+!s100 Ci:`;Un3]gfTI[968U5^70
+R2
+Iz1b@NacDi7gS0jDOI;48Q3
 R3
-IeJ^]0InVNkM==7;<9LLg52
-R4
 S1
 R0
-w1714538126
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv
+w1714722956
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv
 !i122 1
-L0 3 83
-R5
+L0 1 64
+R4
 r1
 !s85 0
 31
-R6
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv|
+R5
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv|
 !i113 1
+Z8 o-sv -work work
+Z9 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory
+R6
+n@m@e@m_@w@b_@reg
+vmemory
 R7
-!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
+R1
+!i10b 1
+!s100 2o1a7[=F3caL:[MCOGka_1
+R2
+I8VnE6a^K9=j7mDRgMP3G`3
+R3
+S1
+R0
+w1714724379
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv
+!i122 2
+L0 3 44
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv|
+!i113 1
 R8
-n@i@d_@e@x@e_@reg_tb
+R9
+R6
+vmemory_tb
+R7
+R1
+!i10b 1
+!s100 2WE_mYUD>?0zJ;h>MYVNi3
+R2
+I[ziNHlm9ImL2N21=Y2WQS2
+R3
+S1
+R0
+w1714724282
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/memory_tb.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/memory_tb.sv
+!i122 3
+L0 3 57
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/memory_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/memory_tb.sv|
+!i113 1
+R8
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
+R6

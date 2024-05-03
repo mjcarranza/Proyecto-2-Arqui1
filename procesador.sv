@@ -8,8 +8,8 @@ module procesador(input logic clkFPGA, rst,
 	logic [15:0] pcStageIn, PCD, PCE, pcP2In, PCPlus2D, PCPlus2E, PCPlus2M, PCPlus2W, instDeco, dataDeco1, dataDeco2, resultWB;
 	logic [15:0] aluResM, aluResW, writeDataM, readDataM, readDataW;
 	logic PCSrcE, memWriteDeco, regWriteWB, regWriteM, regWriteDeco, memWriteM;
-	logic jumpDeco, branchDeco, aluSrcDeco, resultSrcM, resultSrcW;
-	logic [1:0] resultSrcDeco;
+	logic jumpDeco, branchDeco, aluSrcDeco, resultSrcM;
+	logic [1:0] resultSrcDeco, resultSrcW;
 	logic [2:0] aluControlDeco;
 	logic [3:0] RdestE, RdestW, RdestM;
  

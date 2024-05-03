@@ -4,14 +4,14 @@ module MEM_WB_Reg(
     input logic reset,            			// Reset asíncrono
 	 
 	 input logic regWrite_in,
-	 input logic resultSrc_in,
+	 input logic [1:0]resultSrc_in,
     input logic [15:0] pc_plus2_in, 		// Valor de PC+4 de la etapa IF
 	 input logic [3:0] rd_in,     			// Registro destino
 	 input logic [15:0] aluRes_in,
 	 input logic [15:0] readData_in,     	// Operando 2
 	 
 	 output logic regWrite_out,
-	 output logic resultSrc_out,
+	 output logic [1:0] resultSrc_out,
     output logic [15:0] pc_plus2_out,  	// Valor de PC+4 almacenado
 	 output logic [3:0] rd_out,     			// Registro destino
 	 output logic [15:0] aluRes_out,
@@ -21,7 +21,7 @@ module MEM_WB_Reg(
 
     // Define registros internos para almacenar los valores entre etapas
 	 logic regWrite_reg;
-	 logic resultSrc_reg;
+	 logic [1:0] resultSrc_reg;
     logic [15:0] pc_plus2_reg;
 	 logic [3:0] rd_reg;
 	 logic [15:0] aluRes_reg;

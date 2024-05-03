@@ -10,36 +10,62 @@
 # Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # 
-# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv}
+# vlog -vlog01compat -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:35:46 on Apr 30,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv 
-# -- Compiling module ID_EXE_Reg
+# Start time: 02:19:58 on May 03,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v 
+# -- Compiling module DataMem
 # 
 # Top level modules:
-# 	ID_EXE_Reg
-# End time: 22:35:46 on Apr 30,2024, Elapsed time: 0:00:00
+# 	DataMem
+# End time: 02:19:58 on May 03,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# 
-# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv}
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 22:35:46 on Apr 30,2024
-# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv 
-# -- Compiling module ID_EXE_Reg_tb
+# Start time: 02:19:58 on May 03,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv 
+# -- Compiling module MEM_WB_Reg
 # 
 # Top level modules:
-# 	ID_EXE_Reg_tb
-# End time: 22:35:46 on Apr 30,2024, Elapsed time: 0:00:00
+# 	MEM_WB_Reg
+# End time: 02:19:58 on May 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:19:58 on May 03,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv 
+# -- Compiling module memory
+# 
+# Top level modules:
+# 	memory
+# End time: 02:19:58 on May 03,2024, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  ID_EXE_Reg_tb
-# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" ID_EXE_Reg_tb 
-# Start time: 22:35:46 on Apr 30,2024
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/memory_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 02:19:58 on May 03,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/memory_tb.sv 
+# -- Compiling module memory_tb
+# 
+# Top level modules:
+# 	memory_tb
+# End time: 02:19:58 on May 03,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  memory_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" memory_tb 
+# Start time: 02:19:58 on May 03,2024
 # Loading sv_std.std
-# Loading work.ID_EXE_Reg_tb
-# Loading work.ID_EXE_Reg
-# ** Warning: (vsim-3015) [PCDPC] - Port size (5) does not match connection size (4) for port 'rd_out'. The port definition is at: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv(18).
-#    Time: 0 ps  Iteration: 0  Instance: /ID_EXE_Reg_tb/dut File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/ID_EXE_Reg_tb.sv Line: 23
+# Loading work.memory_tb
+# Loading work.memory
+# Loading work.DataMem
+# Loading altera_mf_ver.altsyncram
+# Loading work.MEM_WB_Reg
+# Loading altera_mf_ver.altsyncram_body
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (16) for port 'address'. The port definition is at: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v(41).
+#    Time: 0 ps  Iteration: 0  Instance: /memory_tb/uut/dataMem_inst File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/memory.sv Line: 18
 # 
 # add wave *
 # view structure
@@ -47,7 +73,14 @@
 # view signals
 # .main_pane.objects.interior.cs.body.tree
 # run -all
+# ** Warning: (vsim-3534) [FOFIR] - Failed to open file "./Memory/DataMem.mif" for reading.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(264)
+#    Time: 0 ps  Iteration: 0  Instance: /memory_tb/uut/dataMem_inst/altsyncram_component/m_default/altsyncram_inst
+# ERROR: cannot read ./Memory/DataMem.mif.
+# ** Warning: (vsim-7) Failed to open readmem file "./Memory/DataMem.ver" in read mode.
+# No such file or directory. (errno = ENOENT)    : $MODEL_TECH/../altera/verilog/src/altera_mf.v(48977)
+#    Time: 0 ps  Iteration: 0  Instance: /memory_tb/uut/dataMem_inst/altsyncram_component/m_default/altsyncram_inst
 # Break key hit
-# Simulation stop requested.
-# End time: 22:38:08 on Apr 30,2024, Elapsed time: 0:02:22
-# Errors: 0, Warnings: 1
+# Break in Module MEM_WB_Reg at C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv line 32
+# End time: 02:22:35 on May 03,2024, Elapsed time: 0:02:37
+# Errors: 0, Warnings: 3
