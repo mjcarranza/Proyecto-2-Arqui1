@@ -1,6 +1,6 @@
 module alu(
 	input [31:0] A, B,
-	input [1:0] sel,
+	input [3:0] sel,
 	output [31:0] alu_out,
 	output zero, negative, carry
 	);
@@ -15,15 +15,47 @@ module alu(
 		case (sel)
 		
 			// caso de la suma
-			2'b00: alu_out_temp = A + B; 
+			4'b0000: alu_out_temp = A + B; 
 			
 			// caso de la resta
-			2'b01: alu_out_temp = A - B;
+			4'b0001: alu_out_temp = A - B;
 			
-			// caso de copiar el B
-			2'b10: alu_out_temp = B;
+			// caso de AND
+			4'b0010: alu_out_temp = A && B;
+
+			//caso de OR
+			4'b0011: alu_out_temp = A || B;
+
+			//caso de LSL
+			4'b0011: alu_out_temp = A << B;
+
+			//caso de CMP
+			4'b0101: alu_out_temp = A - B;
+
+			if(alu_out_temp == 0) begin
+				assign zero = 1'b1;
+			end 
+
+			//caso de SET
+			4'b0110: alu_out_temp = A;
+
+			//caso de LDR
+			4'b0111: alu_out_temp = A;
+
+			// caso de STR
+			4'b1000: alu_out_temp = A;
+
+			// caso de Branch
+			4'b1001: alu_out_temp = A;
+
+			// caso de BEQ
+			4'b1010: alu_out_temp = A;
+
+			// caso de BGE
+			4'b1011: alu_out_temp = A;
 			
-			default: alu_out_temp = A + B; 
+			//STALL
+			default: alu_out_temp = 0 
 		
 		endcase 
 		

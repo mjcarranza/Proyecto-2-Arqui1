@@ -22,7 +22,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b000;// numero de operacion para la alu
+					Control = 4'b0000;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 
@@ -32,7 +32,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b001;// numero de operacion para la alu
+					Control = 4'b0001;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0010: begin // acciones para AND
@@ -41,7 +41,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b010;// numero de operacion para la alu
+					Control = 4'b0010;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0011: begin // acciones para ORR
@@ -50,7 +50,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b011;// numero de operacion para la alu
+					Control = 4'b0011;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0100: begin // acciones para LSL
@@ -59,7 +59,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b100;// numero de operacion para la alu
+					Control = 4'b0100;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0101: begin // acciones para CMP  // VERIFICAR BANDERAS DE CERO DE LA ALU
@@ -69,7 +69,7 @@ module Control_Unit(
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump
 						b = 0;			// no hay branch
-						Control = 3'b101;// numero de operacion para la alu // SUMAR CERO EN ALU
+						Control = 4'b0101;// numero de operacion para la alu // SUMAR CERO EN ALU
 						aSrc = 1;			// fuente del segundo dato para la alu (inmediato)
 				  end
 				  else begin
@@ -78,7 +78,7 @@ module Control_Unit(
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump
 						b = 0;			// no hay branch
-						Control = 3'b110;// numero de operacion para la alu // SUMAR CERO EN ALU
+						Control = 4'b0110;// numero de operacion para la alu // SUMAR CERO EN ALU
 						aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 				  end
 				  
@@ -90,7 +90,7 @@ module Control_Unit(
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump
 						b = 0;			// no hay branch
-						Control = 3'b000;// numero de operacion para la alu // SUMAR CERO EN ALU
+						Control = 4'b0110;// numero de operacion para la alu // SUMAR CERO EN ALU
 						aSrc = 1;			// fuente del segundo dato para la alu (inmediato)
 				  end
 				  else begin
@@ -109,7 +109,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b100;// numero de operacion para la alu
+					Control = 4'b0111;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b1000: begin // acciones para STR
