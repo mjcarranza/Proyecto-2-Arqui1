@@ -11,7 +11,7 @@ module ID_EXE_Reg(
 	 
 	 input regWrite_in, memWrite_in, jump_in, branch_in, aluSrc_in, // banderas de 1 bit
 	 input [1:0] resultSrc_in, // bandera de 2 bits
-	 input [2:0] aluControl_in,  // bandera de 3 bits
+	 input [3:0] aluControl_in,  // bandera de 3 bits
 	 
 	 // agregar aca las se;ales del control unit	 in/out
 	 
@@ -24,7 +24,7 @@ module ID_EXE_Reg(
 	 
 	 output regWrite_out, memWrite_out, jump_out, branch_out, aluSrc_out, // banderas de 1 bit
 	 output [1:0] resultSrc_out, // bandera de 2 bits
-	 output [2:0] aluControl_out  // bandera de 3 bits
+	 output [3:0] aluControl_out  // bandera de 3 bits
 	);
 
     // Define registros internos para almacenar los valores entre etapas
@@ -37,7 +37,7 @@ module ID_EXE_Reg(
 	 
 	 // banderas
 	 logic [1:0] resultSrc;
-	 logic [2:0] aluControl;
+	 logic [3:0] aluControl;
 	 logic regWrite, memWrite, jump, branch, aluSrc;
 	 
 	 

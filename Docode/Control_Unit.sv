@@ -1,14 +1,14 @@
 module Control_Unit(
 	input [3:0] operation, // 4 Bits para el codigo de operacion
 	input imm, // bandera de inmediato
-	output regWrite, memWrite, jump, branch, aluSrc, // banderas de 1 bit
+	output regWrite, memWrite, jump, branch, aluSrc, stop, // banderas de 1 bit
 	output [1:0] resultSrc, // bandera de 2 bits
-	output [2:0] aluControl  // bandera de 3 bits
+	output [3:0] aluControl  // bandera de 3 bits
 	);
 	
 	logic [1:0] resSrc;
-	logic [2:0] Control;
-	logic rWrite, mWrite, j, b, aSrc;
+	logic [3:0] Control;
+	logic rWrite, mWrite, j, b, aSrc, pStop;
 	
 	
 	
@@ -41,7 +41,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 4'b0010;// numero de operacion para la alu
+					Control = 4'b010;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0011: begin // acciones para ORR
@@ -50,7 +50,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 4'b0011;// numero de operacion para la alu
+					Control = 4'b011;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0100: begin // acciones para LSL
@@ -59,7 +59,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 4'b0100;// numero de operacion para la alu
+					Control = 4'b100;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b0101: begin // acciones para CMP  // VERIFICAR BANDERAS DE CERO DE LA ALU
@@ -69,7 +69,7 @@ module Control_Unit(
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump
 						b = 0;			// no hay branch
-						Control = 4'b0101;// numero de operacion para la alu // SUMAR CERO EN ALU
+						Control = 4'b101;// numero de operacion para la alu // SUMAR CERO EN ALU
 						aSrc = 1;			// fuente del segundo dato para la alu (inmediato)
 				  end
 				  else begin
@@ -78,7 +78,7 @@ module Control_Unit(
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump
 						b = 0;			// no hay branch
-						Control = 4'b0110;// numero de operacion para la alu // SUMAR CERO EN ALU
+						Control = 4'b101;// numero de operacion para la alu // SUMAR CERO EN ALU
 						aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 				  end
 				  
@@ -99,7 +99,7 @@ module Control_Unit(
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump
 						b = 0;			// no hay branch
-						Control = 3'b100;// numero de operacion para la alu // SUMAR CERO EN ALU
+						Control = 4'b0110;// numero de operacion para la alu // SUMAR CERO EN ALU
 						aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 				  end
 			 end
@@ -118,7 +118,7 @@ module Control_Unit(
 					mWrite = 1;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b100;// numero de operacion para la alu
+					Control = 4'b1000;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b1001: begin // acciones para B
@@ -127,7 +127,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 1;				// no hay jump
 					b = 1;			// no hay branch
-					Control = 3'b100;// numero de operacion para la alu
+					Control = 4'b1001;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b1010: begin // acciones para BEQ
@@ -136,7 +136,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 1;				// no hay jump
 					b = 1;			// no hay branch
-					Control = 3'b100;// numero de operacion para la alu
+					Control = 4'b1010;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 			 4'b1011: begin // acciones para BGE
@@ -145,8 +145,18 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 1;				// no hay jump
 					b = 1;			// no hay branch
-					Control = 3'b100;// numero de operacion para la alu
+					Control = 4'b1011;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
+			 end
+			 4'b1101: begin // acciones para BGE
+					rWrite = 0;			// habilita bandera para escribir en registro
+					resSrc = 2'b00;  // guarda en registro el result de la memoria
+					mWrite = 0;			// no escribe en memoria
+					j = 0;				// no hay jump
+					b = 0;			// no hay branch
+					Control = 4'b0000;// numero de operacion para la alu
+					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
+					pStop = 1; 			// bandera para terminar procesamiento
 			 end
 			 
 			 default: begin // acciones para NOT (stall)
@@ -155,7 +165,7 @@ module Control_Unit(
 					mWrite = 0;			// no escribe en memoria
 					j = 0;				// no hay jump
 					b = 0;			// no hay branch
-					Control = 3'b000;// numero de operacion para la alu
+					Control = 4'b0000;// numero de operacion para la alu
 					aSrc = 0;			// fuente del segundo dato para la alu (contenido de registro)
 			 end
 		endcase
