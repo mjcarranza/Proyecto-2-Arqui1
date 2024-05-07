@@ -11,7 +11,7 @@ cModel Technology
 Z0 dC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/simulation/modelsim
 valu
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1715113699
+Z2 !s110 1715114091
 !i10b 1
 !s100 [G:_UP<Od6F9mMm7alVQX0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -22,13 +22,13 @@ R0
 w1715112018
 8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv
 FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv
-!i122 1
+!i122 11
 L0 1 139
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1715113699.000000
+Z6 !s108 1715114091.000000
 !s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv|
 !i113 1
@@ -37,7 +37,7 @@ Z8 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1
 Z9 tCvgOpt 0
 valuFlags
 R1
-Z10 !s110 1715113700
+Z10 !s110 1715114093
 !i10b 1
 !s100 1^8aHN0iPSX3@cSLA>KGJ2
 R3
@@ -48,13 +48,13 @@ R0
 w1715043798
 8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/aluFlags.sv
 FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/aluFlags.sv
-!i122 4
+!i122 24
 L0 2 14
 R5
 r1
 !s85 0
 31
-R6
+Z11 !s108 1715114092.000000
 !s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/aluFlags.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/aluFlags.sv|
 !i113 1
@@ -75,7 +75,7 @@ R0
 w1715042305
 8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv
 FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv
-!i122 3
+!i122 13
 L0 1 25
 R5
 r1
@@ -88,6 +88,58 @@ R6
 R7
 R8
 R9
+vControl_Unit
+R1
+R2
+!i10b 1
+!s100 SQ?AZGDB<Yb4acElXCG4T2
+R3
+IBFR^@mfQTHP8Gg;Hge8IL2
+R4
+S1
+R0
+w1715103366
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv
+!i122 9
+L0 1 236
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv|
+!i113 1
+R7
+Z12 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode
+R9
+n@control_@unit
+vDataMem
+Z13 !s110 1715114090
+!i10b 1
+!s100 ^j5W?1][<HNf;F0<eB9iO2
+R3
+IzDCH:n7RG;`3d[P7J>N>91
+R4
+R0
+w1714584117
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v
+!i122 0
+L0 40 66
+R5
+r1
+!s85 0
+31
+Z14 !s108 1715114090.000000
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v|
+!i113 1
+Z15 o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory
+R9
+n@data@mem
 vEXE_MEM_Reg
 R1
 R2
@@ -101,7 +153,7 @@ R0
 w1714874122
 8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/EXE_MEM_Reg.sv
 FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/EXE_MEM_Reg.sv
-!i122 0
+!i122 10
 L0 1 69
 R5
 r1
@@ -115,57 +167,163 @@ R7
 R8
 R9
 n@e@x@e_@m@e@m_@reg
-vexecute
+vextend
 R1
-R10
+R2
 !i10b 1
-!s100 @bh9JSnM14<a;?hJTh3`V1
+!s100 Qd_On4dV1>1i5FjhbO<SM0
 R3
-I3[LUJg5IV;iinJ[[_HD1a1
+I:1h<c1SQd_0h]EJ6L`d@z1
 R4
 S1
 R0
-w1715110453
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/execute.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/execute.sv
-!i122 5
-L0 2 77
+w1715102629
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv
+!i122 7
+Z16 L0 1 8
 R5
 r1
 !s85 0
 31
-Z11 !s108 1715113700.000000
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/execute.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/execute.sv|
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/extend.sv|
 !i113 1
 R7
-R8
+R12
 R9
-vexecute_tb
+vID_EXE_Reg
 R1
-R10
+R2
 !i10b 1
-!s100 8cNOjVOV?ce@fNPUgoYL52
+!s100 :7`^a98@O?z0L2P@1NLJ?3
 R3
-IE0]1cM`[52C2M3R[o33Vd1
+I<W_zMV0^aGHWl<1N<lIO>3
 R4
 S1
 R0
-w1715113682
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/execute_tb.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/execute_tb.sv
-!i122 6
-L0 3 118
+w1714871228
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv
+!i122 14
+L0 1 100
 R5
 r1
 !s85 0
 31
-R11
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/execute_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/execute_tb.sv|
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/ID_EXE_Reg.sv|
 !i113 1
 R7
-!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
+R12
+R9
+n@i@d_@e@x@e_@reg
+vIF_ID_Reg
+R1
+R13
+!i10b 1
+!s100 0<f@1Q;BRgAz8YS;DolR92
+R3
+IWS>og>enVAZA=`_MKR<l01
+R4
+S1
+R0
+w1714536444
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IF_ID_Reg.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IF_ID_Reg.sv
+!i122 5
+L0 1 40
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IF_ID_Reg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IF_ID_Reg.sv|
+!i113 1
+R7
+Z17 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch
+R9
+n@i@f_@i@d_@reg
+vIMem
+R13
+!i10b 1
+!s100 az^8aD1h^Wm9KbKAeob<=3
+R3
+I0hdL9iHK?MS?3h@PVP2zM0
+R4
+R0
+w1715100093
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IMem.v
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IMem.v
+!i122 1
+L0 40 61
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IMem.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/IMem.v|
+!i113 1
+R15
+!s92 -vlog01compat -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch
+R9
+n@i@mem
+vMEM_WB_Reg
+R1
+Z18 !s110 1715114092
+!i10b 1
+!s100 GF^z]f0hSIMIgl3AaK^Od2
+R3
+IN[H3NV6o_Rc_O?blTeg^M1
+R4
+S1
+R0
+w1715033503
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv
+!i122 15
+L0 1 67
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/MEM_WB_Reg.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory
+R9
+n@m@e@m_@w@b_@reg
+vmux2_1
+R1
+R13
+!i10b 1
+!s100 ]:kd6@Q<d6ZS_5U=VCUal0
+R3
+Ic;n=VM`4bTR3Yk4M]fAA:2
+R4
+S1
+R0
+w1714344626
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/mux2_1.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/mux2_1.sv
+!i122 4
+Z19 L0 1 13
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/mux2_1.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/mux2_1.sv|
+!i113 1
+R7
+R17
 R9
 vmux_Exe
 R1
@@ -180,8 +338,8 @@ R0
 w1714411713
 8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/mux_Exe.sv
 FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/mux_Exe.sv
-!i122 2
-L0 1 13
+!i122 12
+R19
 R5
 r1
 !s85 0
@@ -194,3 +352,347 @@ R7
 R8
 R9
 nmux_@exe
+vmux_WB
+R1
+R18
+!i10b 1
+!s100 QHLKQJ5LFJ9kN3b2;EC8K1
+R3
+IBMjGaXT9WeX0>>I`MFf?b3
+R4
+S1
+R0
+w1715033658
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack/mux_WB.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack/mux_WB.sv
+!i122 16
+L0 1 26
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack/mux_WB.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack/mux_WB.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack
+R9
+nmux_@w@b
+vmuxDeco
+R1
+R18
+!i10b 1
+!s100 FRQD;d9]6YO[GIEAJ>4=40
+R3
+IL]Vnn@o>lI3jFkH1XXOam0
+R4
+S1
+R0
+w1715015089
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxDeco.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxDeco.sv
+!i122 22
+Z20 L0 2 13
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxDeco.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxDeco.sv|
+!i113 1
+R7
+R12
+R9
+nmux@deco
+vmuxSrc
+R1
+R18
+!i10b 1
+!s100 1M;<H?Y_?n2if@klnM@5F3
+R3
+I?3iec:nc5`8X7_3Uz_@QO1
+R4
+S1
+R0
+w1715032583
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxSrc.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxSrc.sv
+!i122 23
+R20
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxSrc.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxSrc.sv|
+!i113 1
+R7
+R12
+R9
+nmux@src
+vpll
+R1
+R18
+!i10b 1
+!s100 cDYiWenzbmRDH:n6Ze?=A2
+R3
+I[=W<W>g4]FF:30;fS5lWI0
+R4
+S1
+R0
+w1714876845
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/pll.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/pll.sv
+!i122 18
+L0 1 15
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/pll.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/pll.sv|
+!i113 1
+R7
+Z21 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga
+R9
+vprocesador
+R1
+R2
+!i10b 1
+!s100 5N3@]_BG1k>Sfa;?XgO@12
+R3
+In@D=87?TkE3JBj4E8GObV3
+R4
+S1
+R0
+w1715104649
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv
+!i122 6
+L0 1 251
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1
+R9
+vprocesador_tb
+R1
+R10
+!i10b 1
+!s100 3O>FFS>?B8ZZ6@94DX:>I3
+R3
+IA7=;eZUTQjFWih;0b9Dcz1
+R4
+S1
+R0
+w1715114066
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/procesador_tb.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/procesador_tb.sv
+!i122 25
+L0 3 50
+R5
+r1
+!s85 0
+31
+!s108 1715114093.000000
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/procesador_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/procesador_tb.sv|
+!i113 1
+R7
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
+R9
+vprogram_counter
+R1
+R13
+!i10b 1
+!s100 ?Q^BRnbIGhIS1k56gP4db0
+R3
+I5<zkB7Z<>`8MbiiYcjz8I2
+R4
+S1
+R0
+w1714878861
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/program_counter.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/program_counter.sv
+!i122 3
+L0 2 16
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/program_counter.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/program_counter.sv|
+!i113 1
+R7
+R17
+R9
+vregister_file
+R1
+R2
+!i10b 1
+!s100 00WHdELhV>P2AU7KF@R@]3
+R3
+IKL7DW@hY<61FQ^ZjZkDfS3
+R4
+S1
+R0
+w1714530368
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/register_file.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/register_file.sv
+!i122 8
+L0 2 66
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/register_file.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/register_file.sv|
+!i113 1
+R7
+R12
+R9
+vshiftLPC
+R1
+R18
+!i10b 1
+!s100 7`l5lhLY[J3A1CkE8OD320
+R3
+I_8S<Cj`UJfI2iPIkATmUh0
+R4
+S1
+R0
+w1714880043
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv
+!i122 21
+R16
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv|
+!i113 1
+R7
+R12
+R9
+nshift@l@p@c
+vsumador
+R1
+R13
+!i10b 1
+!s100 =2nMl7YMQ]E:o2=A74>G:0
+R3
+IhE^3Y6LLiOLd=>Zn6cIEf1
+R4
+S1
+R0
+w1714344890
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/sumador.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/sumador.sv
+!i122 2
+L0 1 10
+R5
+r1
+!s85 0
+31
+R14
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/sumador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/InstructionFetch/sumador.sv|
+!i113 1
+R7
+R17
+R9
+vvga
+R1
+R18
+!i10b 1
+!s100 ^FzWZWKfLM:Hf]nVQ>00H3
+R3
+IaE4=fYoYEjX0P[01`ejco2
+R4
+S1
+R0
+w1715066104
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv
+!i122 17
+L0 1 37
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv|
+!i113 1
+R7
+R21
+R9
+vvgaController
+R1
+R18
+!i10b 1
+!s100 naD?7<:LlO0^]b]lc@DcA1
+R3
+IUne8zQKC9Fi0@dEQ7`<j33
+R4
+S1
+R0
+w1714876913
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vgaController.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vgaController.sv
+!i122 19
+L0 1 34
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vgaController.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vgaController.sv|
+!i113 1
+R7
+R21
+R9
+nvga@controller
+vvideoGen
+R1
+R18
+!i10b 1
+!s100 kj3256JloXN?BlZ]jO@V23
+R3
+I;1M[F[>ma<0@Clh`dE3hD1
+R4
+S1
+R0
+w1715066588
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/videoGen.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/videoGen.sv
+!i122 20
+L0 1 27
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/videoGen.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/videoGen.sv|
+!i113 1
+R7
+R21
+R9
+nvideo@gen
