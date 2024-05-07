@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "05/04/2024 21:44:48"
+// DATE "05/07/2024 01:19:51"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -241,7 +241,7 @@ defparam \blank_b~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X22_Y81_N53
 cyclonev_io_obuf \r[0]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -257,7 +257,7 @@ defparam \r[0]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X4_Y81_N2
 cyclonev_io_obuf \r[1]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -273,7 +273,7 @@ defparam \r[1]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X12_Y0_N36
 cyclonev_io_obuf \r[2]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -289,7 +289,7 @@ defparam \r[2]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X16_Y0_N2
 cyclonev_io_obuf \r[3]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -305,7 +305,7 @@ defparam \r[3]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X38_Y0_N19
 cyclonev_io_obuf \r[4]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -321,7 +321,7 @@ defparam \r[4]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X84_Y0_N19
 cyclonev_io_obuf \r[5]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -337,7 +337,7 @@ defparam \r[5]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X22_Y81_N19
 cyclonev_io_obuf \r[6]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -353,7 +353,7 @@ defparam \r[6]~output .shift_series_termination_control = "false";
 
 // Location: IOOBUF_X62_Y0_N36
 cyclonev_io_obuf \r[7]~output (
-	.i(vcc),
+	.i(gnd),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),

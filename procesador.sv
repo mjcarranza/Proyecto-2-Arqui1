@@ -1,4 +1,4 @@
-module procesador(input logic clk, rst,
+module procesador(input logic clk, rst, rstVga,
 			output logic vgaclk, // 25.175 MHz VGA clock
 			output logic hsync, vsync,
 			output logic sync_b, blank_b, // To monitor & DAC
@@ -6,12 +6,12 @@ module procesador(input logic clk, rst,
 
 	logic [15:0] pc, pc_out, Inst, PCPlus2F, extended, extendedE, RD1E, RD2E, srcBE;
 	logic [15:0] pcStageIn, PCD, PCE, pcP2In, PCPlus2D, PCPlus2E, PCPlus2M, PCPlus2W, instDeco, dataDeco1, dataDeco2, resultWB;
-	logic [15:0] aluResM, aluResE, aluResW, writeDataM, readDataM, readDataW, realPc;
-	logic PCSrcE, memWriteDeco, memWriteE, regWriteWB, regWriteM, regWriteE, regWriteDeco, memWriteM;
-	logic jumpDeco, jumpE, branchDeco, branchE, aluSrcDeco, aluSrcE, resultSrcM, zeroE, procesStop;
+	logic [15:0] aluResM, aluResE, aluResW, writeDataM, writeDataW, readDataM, readDataW, realPc, source, dataD;
+	logic PCSrcE, memWriteDeco, memWriteE, regWriteWB, regWriteM, regWriteE, regWriteDeco, memWriteM, a1Source;
+	logic jumpDeco, jumpE, branchDeco, branchE, aluSrcDeco, aluSrcE, resultSrcM, zeroE, zeroComp, negE, negComp, procesStop;
 	logic [1:0] resultSrcDeco, resultSrcE, resultSrcW;
 	logic [3:0] aluControlDeco, aluControlE;
-	logic [3:0] RdestE, RdestW, RdestM;
+	logic [3:0] RdestE, RdestW, RdestM, a1Data, a2Data;
 	
 	
 	
@@ -19,6 +19,7 @@ module procesador(input logic clk, rst,
 	
 	vga vga_inst(
 				.clk(clk),
+				.rstVga(rstVga),
 				.vgaclk(vgaclk),
 				.hsync(hsync), 
 				.vsync(vsync),
@@ -59,12 +60,33 @@ module procesador(input logic clk, rst,
 	// instancia de extension de signo
 	extend ext_inst(.Instr(instDeco[7:1]), .ExtImm(extended));
 	
+		// mux PC
+	muxDeco muxRF1(.data0(instDeco[7:4]), // Rm
+                .data1(instDeco[11:8]),  // Rd para set y cmp
+                .select(a1Source),
+                .result(a1Data)
+                );
+					 
+	// instancia para el dato fuente numero 1
+	muxSrc muxSrc1(.data0(dataDeco1),
+				 .data1(16'h0000),
+				 .select(source),
+				 .result(dataD)
+				 );
+				 
+	// instancia para el dato fuente numero 2
+	muxDeco muxRF2(.data0(instDeco[3:0]), // Rn
+                .data1(instDeco[11:8]), // Rd para set y cmp
+                .select(a1Source),
+                .result(a2Data)
+                );
+	
 	// instancia de register file
 	register_file regFile_inst(.clk(clk), 
 										.rst(rst), 
 										.regWrite(regWriteWB), 
-										.A1(instDeco[7:4]), 
-										.A2(instDeco[3:0]), 
+										.A1(a1Data), 
+										.A2(a2Data), 
 										.A3(RdestW), 
 										.WD3(resultWB),	
 										.RD1(dataDeco1), 
@@ -74,6 +96,7 @@ module procesador(input logic clk, rst,
 	// instancia para la unidad de control
 	Control_Unit control_inst( .operation(instDeco[15:12]),
 										.imm(instDeco[0]),
+										.a1Source(a1Source),
 										.regWrite(regWriteDeco), 
 										.memWrite(memWriteDeco), 
 										.jump(jumpDeco), 
@@ -81,7 +104,8 @@ module procesador(input logic clk, rst,
 										.aluSrc(aluSrcDeco), 
 										.resultSrc(resultSrcDeco),
 										.aluControl(aluControlDeco),
-										.stop(procesStop)
+										.stop(procesStop),
+										.mxSource(source)
 										);
 										
 	// instancia para el sll del pc
@@ -95,7 +119,7 @@ module procesador(input logic clk, rst,
 							.reset(rst),
 							.pc_in(realPc),
 							.pc_plus2_in(PCPlus2D),
-							.op1_in(dataDeco1),
+							.op1_in(dataD),
 							.op2_in(dataDeco2),
 							.rd_in(instDeco[11:8]),
 							.extend_in(extended),
@@ -123,7 +147,7 @@ module procesador(input logic clk, rst,
 	// instancia mux
 	mux_Exe muxExe_inst(.data0(RD2E),
 							  .data1(extendedE),
-							  .select(resultSrcE),
+							  .select(aluSrcE),
 							  .result(srcBE)
 							  );
 	
@@ -133,14 +157,25 @@ module procesador(input logic clk, rst,
 					 .B(srcBE),
 					 .sel(aluControlE),
 					 .alu_out(aluResE),
-					 .zero(zeroE)
+					 .zero(zeroE),
+					 .negative(negE)
 					);
+					
+	// instancia para el registro de las flags
+	aluFlags aluFlags_inst(	.clk(clk), 
+									.rst(rst), 
+									.n(negE), 
+									.z(zeroE),
+									.nOut(negComp), 
+									.zOut(zeroComp)
+									);
 					
 	// instancia de compuerta 
 	compuerta compuerta_inst(
-							 .zeroE(zeroE), 
+							 .zeroE(zeroComp), 
 							 .jumpE(jumpE), 
 							 .branchE(branchE),
+							 .negative(negComp),
 							 .pcSrcE(PCSrcE) // salida
 							);
 							
@@ -166,7 +201,6 @@ module procesador(input logic clk, rst,
 							 .rd_out(RdestM),     	// Registro destino
 							 .aluRes_out(aluResM),
 							 .op2_out(writeDataM)     	// Operando 2
-							 					  
 							);
 	
 	
@@ -191,13 +225,15 @@ module procesador(input logic clk, rst,
 							.rd_in(RdestM),
 							.aluRes_in(aluResM),
 							.readData_in(readDataM),
+							.writeDataM(writeDataM),
 							
 							.regWrite_out(regWriteWB),
 							.resultSrc_out(resultSrcW),
 							.pc_plus2_out(PCPlus2W),
 							.rd_out(RdestW),
 							.aluRes_out(aluResW),
-							.readData_out(readDataW)
+							.readData_out(readDataW),
+							.writeDataW(writeDataW)
 							);
 							
 	// -------------------------------- Etapa de write back ------------------------------------ //
@@ -206,6 +242,7 @@ module procesador(input logic clk, rst,
 	mux_WB mux3a1_inst(	.data0(aluResW),
 								.data1(readDataW),
 								.data2(PCPlus2W),
+								.data3(writeDataW),
 								.select(resultSrcW),
 								.result(resultWB)
 								);

@@ -7,14 +7,14 @@ module MEM_WB_Reg(
 	 input logic [1:0]resultSrc_in,
     input logic [15:0] pc_plus2_in, 		// Valor de PC+4 de la etapa IF
 	 input logic [3:0] rd_in,     			// Registro destino
-	 input logic [15:0] aluRes_in,
+	 input logic [15:0] aluRes_in, writeDataM,
 	 input logic [15:0] readData_in,     	// Operando 2
 	 
 	 output logic regWrite_out,
 	 output logic [1:0] resultSrc_out,
     output logic [15:0] pc_plus2_out,  	// Valor de PC+4 almacenado
 	 output logic [3:0] rd_out,     			// Registro destino
-	 output logic [15:0] aluRes_out,
+	 output logic [15:0] aluRes_out, writeDataW,
 	 output logic [15:0] readData_out     	// Operando 2
 	  
 );
@@ -26,6 +26,7 @@ module MEM_WB_Reg(
 	 logic [3:0] rd_reg;
 	 logic [15:0] aluRes_reg;
 	 logic [15:0] readData_reg;
+	 logic [15:0] writeData_reg;
 	 
 
     // Lógica de actualización de registros
@@ -38,7 +39,7 @@ module MEM_WB_Reg(
 				rd_reg <= 4'b0;
 				aluRes_reg <= 16'b0;
 				readData_reg <= 16'b0;
-				
+				writeData_reg <= 16'b0;
 				
         end else begin 		// Actualiza los registros
 		  
@@ -48,6 +49,7 @@ module MEM_WB_Reg(
 				rd_reg <= rd_in;
 				aluRes_reg <= aluRes_in;
 				readData_reg <= readData_in;
+				writeData_reg <= writeDataM;
 				
         end
         // Si stall está activo, los registros mantienen su valor actual
@@ -60,5 +62,6 @@ module MEM_WB_Reg(
 	 assign rd_out = rd_reg;
 	 assign aluRes_out = aluRes_reg;
 	 assign readData_out = readData_reg;
+	 assign writeDataW = writeData_reg;
 
 endmodule

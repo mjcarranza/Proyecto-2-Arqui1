@@ -9,57 +9,55 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/simulation/modelsim
-vshiftLPC
+vcompuerta
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1714880230
+Z2 !s110 1715042541
 !i10b 1
-!s100 7`l5lhLY[J3A1CkE8OD320
+!s100 @OO5>PiRMb[NYjaS?dZY:0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I_8S<Cj`UJfI2iPIkATmUh0
+IcR;LAL?@>b3W1fH;AfY3[2
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1714880043
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv
+w1715042305
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv
 !i122 0
-L0 1 8
+L0 1 25
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1714880230.000000
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv|
+Z6 !s108 1715042541.000000
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/compuerta.sv|
 !i113 1
 Z7 o-sv -work work
-!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode
+!s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute
 Z8 tCvgOpt 0
-nshift@l@p@c
-vshiftLPC_tb
+vcompuerta_tb
 R1
 R2
 !i10b 1
-!s100 56]:NiL^?FP_O2Zh`oF6f2
+!s100 M13cSZoM:?>>91B6gff^`0
 R3
-I6oY>b]A?;^4HfOZc`^]b41
+IFXiA?i7NaB1N^67T1<UOd3
 R4
 S1
 R0
-w1714880178
-8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/shiftLPC_tb.sv
-FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/shiftLPC_tb.sv
+w1715042448
+8C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv
+FC:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv
 !i122 1
-L0 3 39
+L0 1 48
 R5
 r1
 !s85 0
 31
 R6
-!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/shiftLPC_tb.sv|
-!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/shiftLPC_tb.sv|
+!s107 C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench|C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/compuerta_tb.sv|
 !i113 1
 R7
 !s92 -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench
 R8
-nshift@l@p@c_tb

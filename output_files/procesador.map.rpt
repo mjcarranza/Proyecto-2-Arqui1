@@ -1,5 +1,5 @@
 Analysis & Synthesis report for procesador
-Sat May 04 21:41:51 2024
+Tue May 07 01:23:18 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -17,24 +17,26 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   9. Registers Removed During Synthesis
  10. Removed Registers Triggering Further Register Optimizations
  11. General Register Statistics
- 12. Source assignments for IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated
- 13. Source assignments for DataMem:dataMem_inst|altsyncram:altsyncram_component|altsyncram_2bp1:auto_generated
- 14. Parameter Settings for User Entity Instance: vga:vga_inst|vgaController:vgaCont
- 15. Parameter Settings for User Entity Instance: IMem:IMem_inst|altsyncram:altsyncram_component
- 16. Parameter Settings for User Entity Instance: DataMem:dataMem_inst|altsyncram:altsyncram_component
- 17. altsyncram Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "MEM_WB_Reg:memory"
- 19. Port Connectivity Checks: "DataMem:dataMem_inst"
- 20. Port Connectivity Checks: "EXE_MEM_Reg:EMReg_inst"
- 21. Port Connectivity Checks: "alu:alu_inst"
- 22. Port Connectivity Checks: "mux_Exe:muxExe_inst"
- 23. Port Connectivity Checks: "ID_EXE_Reg:decode"
- 24. Port Connectivity Checks: "IF_ID_Reg:fetch"
- 25. Port Connectivity Checks: "IMem:IMem_inst"
- 26. Port Connectivity Checks: "sumador:sum_inst"
- 27. Post-Synthesis Netlist Statistics for Top Partition
- 28. Elapsed Time Per Partition
- 29. Analysis & Synthesis Messages
+ 12. Inverted Register Statistics
+ 13. Source assignments for IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated
+ 14. Source assignments for DataMem:dataMem_inst|altsyncram:altsyncram_component|altsyncram_2bp1:auto_generated
+ 15. Parameter Settings for User Entity Instance: vga:vga_inst|vgaController:vgaCont
+ 16. Parameter Settings for User Entity Instance: IMem:IMem_inst|altsyncram:altsyncram_component
+ 17. Parameter Settings for User Entity Instance: DataMem:dataMem_inst|altsyncram:altsyncram_component
+ 18. altsyncram Parameter Settings by Entity Instance
+ 19. Port Connectivity Checks: "MEM_WB_Reg:memory"
+ 20. Port Connectivity Checks: "DataMem:dataMem_inst"
+ 21. Port Connectivity Checks: "EXE_MEM_Reg:EMReg_inst"
+ 22. Port Connectivity Checks: "ID_EXE_Reg:decode"
+ 23. Port Connectivity Checks: "Control_Unit:control_inst"
+ 24. Port Connectivity Checks: "muxSrc:muxSrc1"
+ 25. Port Connectivity Checks: "IF_ID_Reg:fetch"
+ 26. Port Connectivity Checks: "IMem:IMem_inst"
+ 27. Port Connectivity Checks: "sumador:sum_inst"
+ 28. Port Connectivity Checks: "vga:vga_inst|videoGen:vgaVideoGen"
+ 29. Post-Synthesis Netlist Statistics for Top Partition
+ 30. Elapsed Time Per Partition
+ 31. Analysis & Synthesis Messages
 
 
 
@@ -61,14 +63,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat May 04 21:41:51 2024       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 07 01:23:18 2024       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; procesador                                  ;
 ; Top-level Entity Name           ; procesador                                  ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 21                                          ;
-; Total pins                      ; 31                                          ;
+; Total registers                 ; 45                                          ;
+; Total pins                      ; 32                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -212,6 +214,9 @@ https://fpgasoftware.intel.com/eula.
 ; vga/vgaController.sv                ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vgaController.sv                ;         ;
 ; vga/videoGen.sv                     ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/videoGen.sv                     ;         ;
 ; Docode/shiftLPC.sv                  ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv                  ;         ;
+; Docode/muxDeco.sv                   ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxDeco.sv                   ;         ;
+; Docode/muxSrc.sv                    ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxSrc.sv                    ;         ;
+; Execute/aluFlags.sv                 ; yes             ; User SystemVerilog HDL File            ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/aluFlags.sv                 ;         ;
 ; imem.v                              ; yes             ; Auto-Found Wizard-Generated File       ; C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v                              ;         ;
 ; altsyncram.tdf                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf                 ;         ;
 ; stratix_ram_block.inc               ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc          ;         ;
@@ -228,31 +233,31 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                  ;
-+---------------------------------------------+--------------------------------+
-; Resource                                    ; Usage                          ;
-+---------------------------------------------+--------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 17                             ;
-;                                             ;                                ;
-; Combinational ALUT usage for logic          ; 31                             ;
-;     -- 7 input functions                    ; 0                              ;
-;     -- 6 input functions                    ; 3                              ;
-;     -- 5 input functions                    ; 3                              ;
-;     -- 4 input functions                    ; 3                              ;
-;     -- <=3 input functions                  ; 22                             ;
-;                                             ;                                ;
-; Dedicated logic registers                   ; 21                             ;
-;                                             ;                                ;
-; I/O pins                                    ; 31                             ;
-;                                             ;                                ;
-; Total DSP Blocks                            ; 0                              ;
-;                                             ;                                ;
-; Maximum fan-out node                        ; vga:vga_inst|pll:vgapll|toggle ;
-; Maximum fan-out                             ; 22                             ;
-; Total fan-out                               ; 195                            ;
-; Average fan-out                             ; 1.71                           ;
-+---------------------------------------------+--------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 27        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 31        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 3         ;
+;     -- 5 input functions                    ; 3         ;
+;     -- 4 input functions                    ; 3         ;
+;     -- <=3 input functions                  ; 22        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 45        ;
+;                                             ;           ;
+; I/O pins                                    ; 32        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 25        ;
+; Total fan-out                               ; 268       ;
+; Average fan-out                             ; 1.91      ;
++---------------------------------------------+-----------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -260,10 +265,11 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                            ; Entity Name   ; Library Name ;
 +-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+---------------+--------------+
-; |procesador                   ; 31 (0)              ; 21 (0)                    ; 0                 ; 0          ; 31   ; 0            ; |procesador                                    ; procesador    ; work         ;
-;    |vga:vga_inst|             ; 31 (0)              ; 21 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |procesador|vga:vga_inst                       ; vga           ; work         ;
+; |procesador                   ; 31 (0)              ; 45 (0)                    ; 0                 ; 0          ; 32   ; 0            ; |procesador                                    ; procesador    ; work         ;
+;    |vga:vga_inst|             ; 31 (0)              ; 45 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |procesador|vga:vga_inst                       ; vga           ; work         ;
 ;       |pll:vgapll|            ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |procesador|vga:vga_inst|pll:vgapll            ; pll           ; work         ;
 ;       |vgaController:vgaCont| ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |procesador|vga:vga_inst|vgaController:vgaCont ; vgaController ; work         ;
+;       |videoGen:vgaVideoGen|  ; 0 (0)               ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |procesador|vga:vga_inst|videoGen:vgaVideoGen  ; videoGen      ; work         ;
 +-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -315,6 +321,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; EXE_MEM_Reg:EMReg_inst|pc_plus2_reg[1]       ; Lost fanout                            ;
 ; MEM_WB_Reg:memory|pc_plus2_reg[0]            ; Lost fanout                            ;
 ; EXE_MEM_Reg:EMReg_inst|pc_plus2_reg[0]       ; Lost fanout                            ;
+; MEM_WB_Reg:memory|writeData_reg[0..15]       ; Lost fanout                            ;
+; aluFlags:aluFlags_inst|zOut                  ; Stuck at GND due to stuck port data_in ;
 ; MEM_WB_Reg:memory|regWrite_reg               ; Lost fanout                            ;
 ; MEM_WB_Reg:memory|resultSrc_reg[0]           ; Lost fanout                            ;
 ; MEM_WB_Reg:memory|rd_reg[0..3]               ; Lost fanout                            ;
@@ -326,6 +334,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; EXE_MEM_Reg:EMReg_inst|rd_reg[0..3]          ; Lost fanout                            ;
 ; EXE_MEM_Reg:EMReg_inst|aluRes_reg[0..15]     ; Lost fanout                            ;
 ; EXE_MEM_Reg:EMReg_inst|op2_reg[0..15]        ; Lost fanout                            ;
+; aluFlags:aluFlags_inst|nOut                  ; Lost fanout                            ;
 ; ID_EXE_Reg:decode|pc_plus2_reg[0..15]        ; Lost fanout                            ;
 ; ID_EXE_Reg:decode|rd_reg[0..3]               ; Lost fanout                            ;
 ; ID_EXE_Reg:decode|ext_reg[0..15]             ; Lost fanout                            ;
@@ -337,6 +346,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; ID_EXE_Reg:decode|memWrite                   ; Lost fanout                            ;
 ; ID_EXE_Reg:decode|jump                       ; Lost fanout                            ;
 ; ID_EXE_Reg:decode|branch                     ; Lost fanout                            ;
+; ID_EXE_Reg:decode|aluSrc                     ; Lost fanout                            ;
 ; register_file:regFile_inst|registers[15][15] ; Lost fanout                            ;
 ; register_file:regFile_inst|registers[15][14] ; Lost fanout                            ;
 ; register_file:regFile_inst|registers[15][13] ; Lost fanout                            ;
@@ -598,7 +608,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; IF_ID_Reg:fetch|pc_plus2_reg[0..15]          ; Lost fanout                            ;
 ; IF_ID_Reg:fetch|instruction_reg[0..15]       ; Lost fanout                            ;
 ; program_counter:pc_inst|q[0..15]             ; Lost fanout                            ;
-; Total Number of Removed Registers = 523      ;                                        ;
+; Total Number of Removed Registers = 542      ;                                        ;
 +----------------------------------------------+----------------------------------------+
 
 
@@ -623,6 +633,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                    ;                           ; MEM_WB_Reg:memory|pc_plus2_reg[2], EXE_MEM_Reg:EMReg_inst|pc_plus2_reg[2],        ;
 ;                                    ;                           ; MEM_WB_Reg:memory|pc_plus2_reg[1], EXE_MEM_Reg:EMReg_inst|pc_plus2_reg[1],        ;
 ;                                    ;                           ; MEM_WB_Reg:memory|pc_plus2_reg[0], EXE_MEM_Reg:EMReg_inst|pc_plus2_reg[0],        ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[15], MEM_WB_Reg:memory|writeData_reg[14],         ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[13], MEM_WB_Reg:memory|writeData_reg[12],         ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[11], MEM_WB_Reg:memory|writeData_reg[10],         ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[9], MEM_WB_Reg:memory|writeData_reg[8],           ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[7], MEM_WB_Reg:memory|writeData_reg[6],           ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[5], MEM_WB_Reg:memory|writeData_reg[4],           ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[3], MEM_WB_Reg:memory|writeData_reg[2],           ;
+;                                    ;                           ; MEM_WB_Reg:memory|writeData_reg[1], MEM_WB_Reg:memory|writeData_reg[0],           ;
 ;                                    ;                           ; MEM_WB_Reg:memory|resultSrc_reg[0], MEM_WB_Reg:memory|rd_reg[3],                  ;
 ;                                    ;                           ; MEM_WB_Reg:memory|rd_reg[2], MEM_WB_Reg:memory|rd_reg[1],                         ;
 ;                                    ;                           ; MEM_WB_Reg:memory|rd_reg[0], MEM_WB_Reg:memory|aluRes_reg[15],                    ;
@@ -670,17 +688,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                    ;                           ; ID_EXE_Reg:decode|pc_plus2_reg[2], ID_EXE_Reg:decode|pc_plus2_reg[1],             ;
 ;                                    ;                           ; ID_EXE_Reg:decode|pc_plus2_reg[0], ID_EXE_Reg:decode|rd_reg[3],                   ;
 ;                                    ;                           ; ID_EXE_Reg:decode|rd_reg[2], ID_EXE_Reg:decode|rd_reg[1],                         ;
-;                                    ;                           ; ID_EXE_Reg:decode|rd_reg[0], ID_EXE_Reg:decode|op1_reg[15],                       ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[15], ID_EXE_Reg:decode|op2_reg[14],                     ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[13], ID_EXE_Reg:decode|op2_reg[12],                     ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[11], ID_EXE_Reg:decode|op2_reg[10],                     ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[9], ID_EXE_Reg:decode|op2_reg[8],                       ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[7], ID_EXE_Reg:decode|op2_reg[6],                       ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[5], ID_EXE_Reg:decode|op2_reg[4],                       ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[3], ID_EXE_Reg:decode|op2_reg[2],                       ;
-;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[1], ID_EXE_Reg:decode|op2_reg[0],                       ;
-;                                    ;                           ; ID_EXE_Reg:decode|resultSrc[0], ID_EXE_Reg:decode|memWrite,                       ;
-;                                    ;                           ; register_file:regFile_inst|RD1_temp[15], register_file:regFile_inst|RD2_temp[15], ;
+;                                    ;                           ; ID_EXE_Reg:decode|rd_reg[0], ID_EXE_Reg:decode|op2_reg[15],                       ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[14], ID_EXE_Reg:decode|op2_reg[13],                     ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[12], ID_EXE_Reg:decode|op2_reg[11],                     ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[10], ID_EXE_Reg:decode|op2_reg[9],                      ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[8], ID_EXE_Reg:decode|op2_reg[7],                       ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[6], ID_EXE_Reg:decode|op2_reg[5],                       ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[4], ID_EXE_Reg:decode|op2_reg[3],                       ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[2], ID_EXE_Reg:decode|op2_reg[1],                       ;
+;                                    ;                           ; ID_EXE_Reg:decode|op2_reg[0], ID_EXE_Reg:decode|resultSrc[0],                     ;
+;                                    ;                           ; ID_EXE_Reg:decode|memWrite, register_file:regFile_inst|RD2_temp[15],              ;
 ;                                    ;                           ; register_file:regFile_inst|RD2_temp[14], register_file:regFile_inst|RD2_temp[13], ;
 ;                                    ;                           ; register_file:regFile_inst|RD2_temp[12], register_file:regFile_inst|RD2_temp[11], ;
 ;                                    ;                           ; register_file:regFile_inst|RD2_temp[10], register_file:regFile_inst|RD2_temp[9],  ;
@@ -696,17 +713,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                    ;                           ; IF_ID_Reg:fetch|pc_plus2_reg[6], IF_ID_Reg:fetch|pc_plus2_reg[5],                 ;
 ;                                    ;                           ; IF_ID_Reg:fetch|pc_plus2_reg[4], IF_ID_Reg:fetch|pc_plus2_reg[3],                 ;
 ;                                    ;                           ; IF_ID_Reg:fetch|pc_plus2_reg[2], IF_ID_Reg:fetch|pc_plus2_reg[1],                 ;
-;                                    ;                           ; IF_ID_Reg:fetch|pc_plus2_reg[0], IF_ID_Reg:fetch|instruction_reg[15],             ;
-;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[14], IF_ID_Reg:fetch|instruction_reg[13],         ;
-;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[12], IF_ID_Reg:fetch|instruction_reg[11],         ;
-;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[10], IF_ID_Reg:fetch|instruction_reg[9],          ;
-;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[8], program_counter:pc_inst|q[1],                 ;
-;                                    ;                           ; program_counter:pc_inst|q[0], program_counter:pc_inst|q[2],                       ;
-;                                    ;                           ; program_counter:pc_inst|q[3], program_counter:pc_inst|q[4],                       ;
+;                                    ;                           ; IF_ID_Reg:fetch|pc_plus2_reg[0], IF_ID_Reg:fetch|instruction_reg[12],             ;
+;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[11], IF_ID_Reg:fetch|instruction_reg[10],         ;
+;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[9], IF_ID_Reg:fetch|instruction_reg[8],           ;
 ;                                    ;                           ; program_counter:pc_inst|q[8], program_counter:pc_inst|q[9],                       ;
 ;                                    ;                           ; program_counter:pc_inst|q[10], program_counter:pc_inst|q[11],                     ;
-;                                    ;                           ; program_counter:pc_inst|q[12], program_counter:pc_inst|q[13],                     ;
-;                                    ;                           ; program_counter:pc_inst|q[14], program_counter:pc_inst|q[15]                      ;
+;                                    ;                           ; program_counter:pc_inst|q[12], program_counter:pc_inst|q[15]                      ;
+; ID_EXE_Reg:decode|op1_reg[15]      ; Lost Fanouts              ; register_file:regFile_inst|RD1_temp[15], IF_ID_Reg:fetch|instruction_reg[15],     ;
+;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[14], IF_ID_Reg:fetch|instruction_reg[13],         ;
+;                                    ;                           ; IF_ID_Reg:fetch|instruction_reg[0], program_counter:pc_inst|q[1],                 ;
+;                                    ;                           ; program_counter:pc_inst|q[0], program_counter:pc_inst|q[2],                       ;
+;                                    ;                           ; program_counter:pc_inst|q[3], program_counter:pc_inst|q[4]                        ;
+; aluFlags:aluFlags_inst|zOut        ; Stuck at GND              ; aluFlags:aluFlags_inst|nOut, ID_EXE_Reg:decode|jump, ID_EXE_Reg:decode|branch,    ;
+;                                    ; due to stuck port data_in ; program_counter:pc_inst|q[13], program_counter:pc_inst|q[14]                      ;
 ; MEM_WB_Reg:memory|regWrite_reg     ; Lost Fanouts              ; EXE_MEM_Reg:EMReg_inst|regWrite_reg, ID_EXE_Reg:decode|regWrite                   ;
 ; ID_EXE_Reg:decode|ext_reg[15]      ; Lost Fanouts              ; IF_ID_Reg:fetch|instruction_reg[7]                                                ;
 ; ID_EXE_Reg:decode|ext_reg[5]       ; Lost Fanouts              ; IF_ID_Reg:fetch|instruction_reg[6]                                                ;
@@ -738,14 +757,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 21    ;
+; Total registers                              ; 45    ;
 ; Number of registers using Synchronous Clear  ; 20    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 24    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++---------------------------------------------------+
+; Inverted Register Statistics                      ;
++-----------------------------------------+---------+
+; Inverted Register                       ; Fan out ;
++-----------------------------------------+---------+
+; vga:vga_inst|videoGen:vgaVideoGen|r[0]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[1]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[2]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[3]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[4]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[5]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[6]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|r[7]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[0]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[1]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[2]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[3]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[4]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[5]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[6]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|g[7]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[0]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[1]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[2]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[3]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[4]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[5]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[6]  ; 1       ;
+; vga:vga_inst|videoGen:vgaVideoGen|b[7]  ; 1       ;
+; Total number of inverted registers = 24 ;         ;
++-----------------------------------------+---------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -965,36 +1017,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "alu:alu_inst"                                                                                                                                     ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                                                                                       ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; A        ; Input  ; Warning  ; Input port expression (16 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "A[31..16]" will be connected to GND. ;
-; B        ; Input  ; Warning  ; Input port expression (16 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "B[31..16]" will be connected to GND. ;
-; alu_out  ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (16 bits) it drives; bit(s) "alu_out[31..16]" have no fanouts                ;
-; negative ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-; carry    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                      ;
-+----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ID_EXE_Reg:decode"                                                                    ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; pc_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux_Exe:muxExe_inst"                                                                                                                                                              ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port   ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; select ; Input ; Warning  ; Input port expression (2 bits) is wider than the input port (1 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-+--------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Control_Unit:control_inst"                                                                                                                                                     ;
++-------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                                                                 ;
++-------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; mxSource    ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (16 bits) it drives.  The 15 most-significant bit(s) in the port expression will be connected to GND. ;
+; readDataVGA ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                                                ;
++-------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ID_EXE_Reg:decode"                                                                        ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; pc_out     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; aluSrc_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "muxSrc:muxSrc1"                                                                                                                                                                     ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; data1  ; Input ; Info     ; Stuck at GND                                                                                                                                                                       ;
+; select ; Input ; Warning  ; Input port expression (16 bits) is wider than the input port (1 bits) it drives.  The 15 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1029,29 +1078,39 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+----------------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "vga:vga_inst|videoGen:vgaVideoGen"                                                                                                              ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; pixel   ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; address ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 21                          ;
+; arriav_ff             ; 45                          ;
+;     CLR               ; 24                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
 ;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 34                          ;
+; arriav_lcell_comb     ; 56                          ;
 ;     arith             ; 20                          ;
 ;         1 data inputs ; 20                          ;
-;     normal            ; 14                          ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 2                           ;
+;     normal            ; 36                          ;
+;         1 data inputs ; 26                          ;
 ;         3 data inputs ; 1                           ;
 ;         4 data inputs ; 3                           ;
 ;         5 data inputs ; 3                           ;
 ;         6 data inputs ; 3                           ;
-; boundary_port         ; 31                          ;
+; boundary_port         ; 32                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.40                        ;
-; Average LUT depth     ; 2.86                        ;
+; Average LUT depth     ; 2.15                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1070,7 +1129,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat May 04 21:41:42 2024
+    Info: Processing started: Tue May 07 01:23:10 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off procesador -c procesador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -1152,18 +1211,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file docode/
     Info (12023): Found entity 1: shiftLPC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/shiftLPC.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file testbench/shiftlpc_tb.sv
     Info (12023): Found entity 1: shiftLPC_tb File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/shiftLPC_tb.sv Line: 3
-Critical Warning (10846): Verilog HDL Instantiation warning at procesador.sv(91): instance has no name File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 91
+Info (12021): Found 1 design units, including 1 entities, in source file docode/muxdeco.sv
+    Info (12023): Found entity 1: muxDeco File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxDeco.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file docode/muxsrc.sv
+    Info (12023): Found entity 1: muxSrc File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/muxSrc.sv Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file execute/aluflags.sv
+    Info (12023): Found entity 1: aluFlags File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/aluFlags.sv Line: 2
+Critical Warning (10846): Verilog HDL Instantiation warning at procesador.sv(115): instance has no name File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 115
 Info (12127): Elaborating entity "procesador" for the top level hierarchy
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 30
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 31
 Info (12128): Elaborating entity "pll" for hierarchy "vga:vga_inst|pll:vgapll" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv Line: 15
 Info (12128): Elaborating entity "vgaController" for hierarchy "vga:vga_inst|vgaController:vgaCont" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv Line: 25
-Info (12128): Elaborating entity "videoGen" for hierarchy "vga:vga_inst|videoGen:vgaVideoGen" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv Line: 33
-Info (12128): Elaborating entity "mux2_1" for hierarchy "mux2_1:muxPC" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 39
-Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:pc_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 42
-Info (12128): Elaborating entity "sumador" for hierarchy "sumador:sum_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 45
+Info (12128): Elaborating entity "videoGen" for hierarchy "vga:vga_inst|videoGen:vgaVideoGen" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vga.sv Line: 35
+Warning (10034): Output port "address" at videoGen.sv(7) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/videoGen.sv Line: 7
+Info (12128): Elaborating entity "mux2_1" for hierarchy "mux2_1:muxPC" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 40
+Info (12128): Elaborating entity "program_counter" for hierarchy "program_counter:pc_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 43
+Info (12128): Elaborating entity "sumador" for hierarchy "sumador:sum_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 46
 Warning (12125): Using design file imem.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: IMem File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 40
-Info (12128): Elaborating entity "IMem" for hierarchy "IMem:IMem_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 48
+Info (12128): Elaborating entity "IMem" for hierarchy "IMem:IMem_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 49
 Info (12128): Elaborating entity "altsyncram" for hierarchy "IMem:IMem_inst|altsyncram:altsyncram_component" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 86
 Info (12130): Elaborated megafunction instantiation "IMem:IMem_inst|altsyncram:altsyncram_component" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 86
 Info (12133): Instantiated megafunction "IMem:IMem_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/imem.v Line: 86
@@ -1185,21 +1251,23 @@ Info (12133): Instantiated megafunction "IMem:IMem_inst|altsyncram:altsyncram_co
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_88o1.tdf
     Info (12023): Found entity 1: altsyncram_88o1 File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_88o1" for hierarchy "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "IF_ID_Reg" for hierarchy "IF_ID_Reg:fetch" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 55
-Info (12128): Elaborating entity "extend" for hierarchy "extend:ext_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 60
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:regFile_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 72
-Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:control_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 85
-Warning (10036): Verilog HDL or VHDL warning at Control_Unit.sv(11): object "pStop" assigned a value but never read File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv Line: 11
-Warning (10034): Output port "stop" at Control_Unit.sv(4) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv Line: 4
-Info (12128): Elaborating entity "shiftLPC" for hierarchy "shiftLPC:comb_3" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 91
-Info (12128): Elaborating entity "ID_EXE_Reg" for hierarchy "ID_EXE_Reg:decode" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 119
-Info (12128): Elaborating entity "mux_Exe" for hierarchy "mux_Exe:muxExe_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 128
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 137
-Warning (10272): Verilog HDL Case Statement warning at alu.sv(38): case item expression covers a value already covered by a previous case item File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv Line: 38
-Warning (10034): Output port "negative" at alu.sv(5) has no driver File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv Line: 5
-Info (12128): Elaborating entity "compuerta" for hierarchy "compuerta:compuerta_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 145
-Info (12128): Elaborating entity "EXE_MEM_Reg" for hierarchy "EXE_MEM_Reg:EMReg_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 170
-Info (12128): Elaborating entity "DataMem" for hierarchy "DataMem:dataMem_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 181
+Info (12128): Elaborating entity "IF_ID_Reg" for hierarchy "IF_ID_Reg:fetch" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 56
+Info (12128): Elaborating entity "extend" for hierarchy "extend:ext_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 61
+Info (12128): Elaborating entity "muxDeco" for hierarchy "muxDeco:muxRF1" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 68
+Info (12128): Elaborating entity "muxSrc" for hierarchy "muxSrc:muxSrc1" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 75
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:regFile_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 94
+Info (12128): Elaborating entity "Control_Unit" for hierarchy "Control_Unit:control_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 109
+Warning (10240): Verilog HDL Always Construct warning at Control_Unit.sv(18): inferring latch(es) for variable "readDataVGATemp", which holds its previous value in one or more paths through the always construct File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv Line: 18
+Info (10041): Inferred latch for "readDataVGATemp" at Control_Unit.sv(18) File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Docode/Control_Unit.sv Line: 18
+Info (12128): Elaborating entity "shiftLPC" for hierarchy "shiftLPC:comb_3" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 115
+Info (12128): Elaborating entity "ID_EXE_Reg" for hierarchy "ID_EXE_Reg:decode" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 143
+Info (12128): Elaborating entity "mux_Exe" for hierarchy "mux_Exe:muxExe_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 152
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 162
+Warning (10272): Verilog HDL Case Statement warning at alu.sv(45): case item expression covers a value already covered by a previous case item File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Execute/alu.sv Line: 45
+Info (12128): Elaborating entity "aluFlags" for hierarchy "aluFlags:aluFlags_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 171
+Info (12128): Elaborating entity "compuerta" for hierarchy "compuerta:compuerta_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 180
+Info (12128): Elaborating entity "EXE_MEM_Reg" for hierarchy "EXE_MEM_Reg:EMReg_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 204
+Info (12128): Elaborating entity "DataMem" for hierarchy "DataMem:dataMem_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 215
 Info (12128): Elaborating entity "altsyncram" for hierarchy "DataMem:dataMem_inst|altsyncram:altsyncram_component" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v Line: 86
 Info (12130): Elaborated megafunction instantiation "DataMem:dataMem_inst|altsyncram:altsyncram_component" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v Line: 86
 Info (12133): Instantiated megafunction "DataMem:dataMem_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/Memory/DataMem.v Line: 86
@@ -1221,8 +1289,152 @@ Info (12133): Instantiated megafunction "DataMem:dataMem_inst|altsyncram:altsync
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_2bp1.tdf
     Info (12023): Found entity 1: altsyncram_2bp1 File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_2bp1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_2bp1" for hierarchy "DataMem:dataMem_inst|altsyncram:altsyncram_component|altsyncram_2bp1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "MEM_WB_Reg" for hierarchy "MEM_WB_Reg:memory" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 201
-Info (12128): Elaborating entity "mux_WB" for hierarchy "mux_WB:mux3a1_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 211
+Info (12128): Elaborating entity "MEM_WB_Reg" for hierarchy "MEM_WB_Reg:memory" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 237
+Info (12128): Elaborating entity "mux_WB" for hierarchy "mux_WB:mux3a1_inst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 248
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "source[15]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[14]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[13]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[12]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[11]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[10]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[9]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[8]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[7]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[6]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[5]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[4]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[3]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[2]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
+    Warning (12110): Net "source[1]" is missing source, defaulting to GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 9
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
         Warning (14320): Synthesized away node "DataMem:dataMem_inst|altsyncram:altsyncram_component|altsyncram_2bp1:auto_generated|q_a[0]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_2bp1.tdf Line: 37
@@ -1257,46 +1469,21 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[13]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 349
         Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[14]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 373
         Warning (14320): Synthesized away node "IMem:IMem_inst|altsyncram:altsyncram_component|altsyncram_88o1:auto_generated|q_a[15]" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/db/altsyncram_88o1.tdf Line: 397
-Warning (12241): 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "r[0]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[1]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[2]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[3]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[4]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[5]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[6]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "r[7]" is stuck at VCC File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[0]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[1]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[2]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[3]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[4]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[5]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[6]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "g[7]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[0]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[1]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[2]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[3]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[4]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[5]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[6]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
-    Warning (13410): Pin "b[7]" is stuck at GND File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 5
+Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 522 registers lost all their fanouts during netlist optimizations.
+Info (17049): 540 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rst" File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/procesador.sv Line: 1
-Info (21057): Implemented 82 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
+Info (21057): Implemented 107 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
     Info (21059): Implemented 29 output pins
-    Info (21061): Implemented 51 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 69 warnings
-    Info: Peak virtual memory: 4898 megabytes
-    Info: Processing ended: Sat May 04 21:41:51 2024
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:08
+    Info (21061): Implemented 75 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 187 warnings
+    Info: Peak virtual memory: 4890 megabytes
+    Info: Processing ended: Tue May 07 01:23:18 2024
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:07
 
 

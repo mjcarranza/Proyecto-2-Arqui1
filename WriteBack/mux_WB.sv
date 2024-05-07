@@ -1,6 +1,7 @@
 module mux_WB( input logic [15:0] data0,
 					input logic [15:0] data1,
 					input logic [15:0] data2,
+					input logic [15:0] data3,
 					input logic [1:0] select,
 					output logic [15:0] result);
 
@@ -17,7 +18,7 @@ module mux_WB( input logic [15:0] data0,
 						result = data2;			// fuente del segundo dato para la alu (contenido de registro)
 				 end
 				 default: begin // acciones para NOT (stall)
-						result = data0;			// fuente del segundo dato para la alu (contenido de registro)
+						result = data3;			// fuente del segundo dato para la alu (contenido de registro)
 				 end
 		endcase
   end
