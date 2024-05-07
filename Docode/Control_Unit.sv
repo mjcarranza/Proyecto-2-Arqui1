@@ -92,7 +92,7 @@ module Control_Unit(
 						mxSourceTemp = 0; // este es pata el mux depues de reg file
 				  end
 				  else begin
-						rWrite = 1;			// habilita bandera para escribir en registro // CHECK ------ 
+						rWrite = 0;			// habilita bandera para escribir en registro // CHECK ------ 
 						resSrc = 2'b00;  // guarda en registro el result de la alu
 						mWrite = 0;			// no escribe en memoria
 						j = 0;				// no hay jump

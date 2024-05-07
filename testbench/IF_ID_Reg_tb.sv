@@ -6,12 +6,12 @@ module IF_ID_Reg_tb;
     logic clk;
     logic reset;
     logic [15:0] pc_in;
-    logic [15:0] pc_plus4_in;
+    logic [15:0] pc_plus2_in;
     logic [15:0] instruction_in;
 
     // Outputs
     logic [15:0] pc_out;
-    logic [15:0] pc_plus4_out;
+    logic [15:0] pc_plus2_out;
     logic [15:0] instruction_out;
 
     // Instancia del módulo IF_ID_Reg
@@ -19,10 +19,10 @@ module IF_ID_Reg_tb;
         .clk(clk), 
         .reset(reset), 
         .pc_in(pc_in), 
-        .pc_plus4_in(pc_plus4_in), 
+        .pc_plus2_in(pc_plus2_in), 
         .instruction_in(instruction_in), 
         .pc_out(pc_out), 
-        .pc_plus4_out(pc_plus4_out), 
+        .pc_plus2_out(pc_plus2_out), 
         .instruction_out(instruction_out)
     );
 
@@ -37,7 +37,7 @@ module IF_ID_Reg_tb;
         clk = 0;
         reset = 0;
         pc_in = 0;
-        pc_plus4_in = 0;
+        pc_plus2_in = 0;
         instruction_in = 0;
 
         // Espera para estabilizar
@@ -50,34 +50,28 @@ module IF_ID_Reg_tb;
         
         // Primer set de valores
         pc_in = 16'h004;
-        pc_plus4_in = 16'h008;
+        pc_plus2_in = 16'h008;
         instruction_in = 16'h1234;
         #10;
         
         // Segundo set de valores
         pc_in = 16'h008;
-        pc_plus4_in = 16'h00C;
+        pc_plus2_in = 16'h00C;
         instruction_in = 16'h5678;
         #10;
 
         // Activar reset en medio de la operación
         reset = 1;
-        #10;
+        #10; 
         reset = 0;
 
         // Continuar con más entradas
         pc_in = 16'h010;
-        pc_plus4_in = 16'h014;
+        pc_plus2_in = 16'h014;
         instruction_in = 16'h9ABC;
         #10;
         
         
-    end
-
-    // Opcional: Monitorear cambios en las señales
-    initial begin
-        $monitor("At time %t, reset = %b, pc_in = %h, pc_plus4_in = %h, instruction_in = %h, pc_out = %h, pc_plus4_out = %h, instruction_out = %h",
-                 $time, reset, pc_in, pc_plus4_in, instruction_in, pc_out, pc_plus4_out, instruction_out);
     end
 
 endmodule

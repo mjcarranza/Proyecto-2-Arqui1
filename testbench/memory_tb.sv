@@ -9,7 +9,7 @@ module memory_tb;
     logic [1:0] resultSrcM;
 
     // Outputs from the memory module
-    logic [15:0] PCPlus2W, aluResW, readDataW;
+    logic [15:0] PCPlus2W, aluResW, readDataW, writeDataW;
     logic [3:0] RdW;
     logic regWriteW;
     logic [1:0] resultSrcW;
@@ -20,7 +20,7 @@ module memory_tb;
         .regWriteM(regWriteM), .memWriteM(memWriteM),
         .aluResM(aluResM), .writeDataM(writeDataM), .PCPlus2M(PCPlus2M),
         .RdM(RdM), .resultSrcM(resultSrcM),
-        .PCPlus2W(PCPlus2W), .aluResW(aluResW), .readDataW(readDataW),
+        .PCPlus2W(PCPlus2W), .aluResW(aluResW), .readDataW(readDataW), .writeDataW(writeDataW),
         .RdW(RdW), .regWriteW(regWriteW), .resultSrcW(resultSrcW)
     );
 

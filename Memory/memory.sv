@@ -4,10 +4,10 @@ module memory( input logic clk, rst, regWriteM, memWriteM,
 					input logic [15:0] aluResM, writeDataM, PCPlus2M,
 					input logic [3:0] RdM,
 					input logic [1:0] resultSrcM,
-					output logic [15:0] PCPlus2W, aluResW, readDataW,
+					output logic [15:0] PCPlus2W, aluResW, readDataW, writeDataW,
 					output logic [3:0] RdW,
 					output logic regWriteW,
-					output logic [1:0] resultSrcW
+					output logic [1:0] resultSrcW 
 					
 					);
 					
@@ -33,13 +33,15 @@ module memory( input logic clk, rst, regWriteM, memWriteM,
 							.rd_in(RdM),
 							.aluRes_in(aluResM),
 							.readData_in(readDataM),
+							.writeDataM(writeDataM),
 							
 							.regWrite_out(regWriteW),
 							.resultSrc_out(resultSrcW),
 							.pc_plus2_out(PCPlus2W),
 							.rd_out(RdW),
 							.aluRes_out(aluResW),
-							.readData_out(readDataW)
+							.readData_out(readDataW),
+							.writeDataW(writeDataW)
 							);
 					
 					

@@ -29,23 +29,27 @@ module fetch_tb;
 
     // Procedimiento de inicialización y prueba
     initial begin
-        // Inicialización de señales
-        clk = 0;
-        rst = 1;  // Iniciar en reset
-        PCSrcE = 0;
-        PCTargetE = 16'h0000;
-        PCPlus2F = 16'h0002;
+			// Inicialización de señales
+			clk = 1;
+			rst = 0;  // Iniciar en reset
+			PCSrcE = 0;
+			PCTargetE = 16'h0000;
+			PCPlus2F = 16'h0000;
 
-        // Desactivar reset y aplicar señales de prueba
-        #10 rst = 0;
-        #10 PCSrcE = 1; // Cambiar la fuente del PC para seleccionar PCTargetE
-            PCTargetE = 16'h0010;
+			// Desactivar reset y aplicar señales de prueba
+			//#5 rst = 0;
 
-        #20 PCSrcE = 0; // Volver a seleccionar PCPlus2F
-            PCPlus2F = 16'h0004;
+			#10 PCSrcE = 0; // Volver a seleccionar PCPlus2F
+				PCPlus2F = 16'h0001;
 
-        #10 PCSrcE = 1; // Cambiar nuevamente a PCTargetE
-            PCTargetE = 16'h0020;
+			#10 PCSrcE = 0; // Cambiar nuevamente a PCTargetE
+				PCPlus2F = 16'h0010;
+				
+			#10 PCSrcE = 0; // Cambiar nuevamente a PCTargetE
+            PCPlus2F = 16'h0011; 
+				
+			#10 PCSrcE = 0; // Cambiar nuevamente a PCTargetE
+            PCPlus2F = 16'h0100;
 
     end
 

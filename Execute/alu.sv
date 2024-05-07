@@ -55,13 +55,17 @@ module alu(
 					zeroTemp = 1'b1;			// set bandera de cero
 					negTemp = 1'b0;
 				end 
-				if (alu_out_temp < 0) begin // no se toma el branch
+				else if (alu_out_temp < 0) begin // no se toma el branch
 					negTemp = 1'b1;
 					zeroTemp = 1'b0;
 				end
-				else begin // en casode que sea mayor (bge) 
+				else if (alu_out_temp > 0) begin // se toma el branch mayor o igual
 					negTemp = 1'b0;
 					zeroTemp = 1'b0;
+				end
+				else begin // en casode que no se toma branch
+					negTemp = 1'b1; 
+					zeroTemp = 1'b1;
 				end
 			end
 

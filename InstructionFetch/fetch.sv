@@ -15,10 +15,10 @@ module fetch(input logic clk, rst, PCSrcE,
 	program_counter pc_inst(.clk(clk), .rst(rst), .d(pc), .q(pc_out));
 	
 	// sumar pc+2
-	sumador sum_inst(.A(pc_out), .B(16'h2), .C(PCPlus2));
+	sumador sum_inst(.A(pc_out), .B(16'h1), .C(PCPlus2));
 
 	// instancia de memoria de instrucciones
-	IMem IMem_inst(.address(pc_out[7:0]), .clock(clk), .q(Inst));
+	IMem IMem_inst(.address(pc_out[11:0]), .clock(clk), .q(Inst));
 	
 	IF_ID_Reg fetch(.clk(clk), 
 						.reset(rst), 

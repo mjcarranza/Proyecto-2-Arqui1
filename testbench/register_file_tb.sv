@@ -7,7 +7,7 @@ module register_file_tb;
   // Señales de control y datos
   logic regWrite;
   logic [3:0] A1, A2, A3;
-  logic [15:0] WD3, R15;
+  logic [15:0] WD3;
 
   // Señales de salida del módulo
   logic [15:0] RD1, RD2;
@@ -21,7 +21,6 @@ module register_file_tb;
     .A2(A2),
     .A3(A3),
     .WD3(WD3),
-    .R15(R15),
     .RD1(RD1),
     .RD2(RD2)
   );
@@ -61,7 +60,7 @@ module register_file_tb;
 			regWrite = 1;
 			// escribo lo de wd3 en el registro 0
 			 // 
-
+ 
 		end
 
       if ($time == 30) begin // leer

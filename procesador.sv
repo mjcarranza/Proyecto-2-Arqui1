@@ -42,8 +42,8 @@ module procesador(input logic clk, rst, rstVga,
 	// registro PC
 	program_counter pc_inst(.clk(clk), .rst(rst), .d(pc), .stop(procesStop), .q(pc_out));
 	
-	// sumar pc+4
-	sumador sum_inst(.A(pc_out), .B(16'h2), .C(PCPlus2F));
+	// sumar pc+1 para usar la siguiente instruccion
+	sumador sum_inst(.A(pc_out), .B(16'h1), .C(PCPlus2F));
 
 	// instancia de memoria de instrucciones
 	IMem IMem_inst(.address(pc_out[7:0]), .clock(clk), .q(Inst));
@@ -81,7 +81,7 @@ module procesador(input logic clk, rst, rstVga,
                 .result(a2Data)
                 );
 	
-	// instancia de register file
+	// instancia de register file 
 	register_file regFile_inst(.clk(clk), 
 										.rst(rst), 
 										.regWrite(regWriteWB), 
@@ -109,7 +109,7 @@ module procesador(input logic clk, rst, rstVga,
 										);
 										
 	// instancia para el sll del pc
-	shiftLPC(
+	shiftLPC shift_inst(
 				.pc(instDeco[11:0]),
             .realPC(realPc)
 				);

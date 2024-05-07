@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 module sumador_tb;
 
   // Señales de entrada/salida del módulo
@@ -15,20 +16,23 @@ module sumador_tb;
   // Inicialización de señales
   initial begin
     // Generar datos aleatorios para A y B
-    A = $random;
-    B = 16'h4;
+    A = 16'h0000;
+    B = 16'h0001;
 
     // Imprimir valores iniciales
-    $display("Tiempo 0: A = %0d, B = %0d, C = %0d", A, B, C);
     #5;
-
     // Cambiar los valores de A y B
-    A = $random;
-    B = $random;
+    A = 16'h1;
+    B = 16'h1;
 	 #5;
+    // Cambiar los valores de A y B
+    A = 16'h2;
+    B = 16'h1;
+	 #5;
+    // Cambiar los valores de A y B
+    A = 16'h3;
+    B = 16'h1;
 
-    // Imprimir valores después del cambio
-    $display("Tiempo 5: A = %0d, B = %0d, C = %0d", A, B, C);
 
   end
 
