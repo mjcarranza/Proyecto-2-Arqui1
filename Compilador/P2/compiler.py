@@ -1,6 +1,9 @@
 import ply.lex as lex
 import ply.yacc as yacc
 
+# --------------------------------------------------
+# ---------- Etapa de inserción de stalls ----------
+# --------------------------------------------------
 
 def readFile(fileName):
     with open(fileName, 'r') as file:
@@ -31,8 +34,8 @@ def addStalls(sentences):
     destinationRegisters = []
     stalls = []
 
-    destinationInstruction = ["set", "add", "sub", "lsl", "ldr",'and','or']
-    operandInstruction = ["add", "sub", "lsl", "cmp", "str",'and','or']
+    destinationInstruction = ["set", "add", "sub", "and", "orr", "lsl", "ldr"]
+    operandInstruction = ["add", "sub", "and", "orr", "lsl", "cmp", "str"]
     branchInstruction = ["bal", "beq", "bge"]
 
     for i in range (0, len(sentences) - 1):
@@ -73,7 +76,6 @@ def addStalls(sentences):
     codeWithStalls.append(sentences[len(sentences) - 1])
     return codeWithStalls
 
-
 def updateDestinationRegisters(destinationRegisters):
     if(len(destinationRegisters) > 0):
         for i in range (0, len(destinationRegisters)):
@@ -81,20 +83,15 @@ def updateDestinationRegisters(destinationRegisters):
         if (destinationRegisters[0][1] == 0):
             destinationRegisters.pop(0)   
 
-
 def removeComa(word):
     if word.endswith(','):  
         return word[:-1]  
     else:
         return word  
 
-
-# USO
-fileName = "archivo.marc" 
-ISASentences = divideSentences(readFile(fileName))
-codeWithStalls = groupSentences(addStalls(ISASentences))
-print('stall',codeWithStalls)
-
+# --------------------------------------------------
+# --------- Etapa de traduccion a binario ----------
+# --------------------------------------------------
 
 # Definición de tokens
 tokens = (
@@ -137,9 +134,7 @@ def t_error(t):
 # Construir el analizador léxico
 lexer = lex.lex()
 
-
 pc=0 # pc
-
 
 def p_program(p):
     
@@ -242,7 +237,6 @@ def p_label_instruction(p):
     labels[p[1]] = pc  # Almacena la dirección de memoria asociada a la etiqueta
     p[0] = p[1]
 
-
 def p_stall_instruction(p):
     '''stall_instruction : NOT'''
     p[0] = (p[1],)
@@ -328,9 +322,8 @@ def translate_instruction(instruction, args , pc):
             #print(jump_address, pc)
             #relative_address=(jump_address-pc)//2
             
-
             binary_instruction += format(jump_address, '012b')  # Convertir la dirección a binario
-            print("slato binario",binary_instruction)
+            #print("salto binario",binary_instruction)
             #binary_instruction += format(int(args[1]), '012b')  # Dirección de salto (12 bits)
             #print("relative address", jump_address, "binario",format(jump_address, '012b')  )
 
@@ -340,35 +333,9 @@ def translate_instruction(instruction, args , pc):
     else:
         return None  # Manejar instrucciones no reconocidas
 
-# Ejemplo de uso
-
-#lexer.input(input_text)
-#for i in lexer:
-#   print(i)
-
-#input_text=file.read()
-
-
-result = parse(codeWithStalls)
-print(result)
-binary_string=''
-a=0
-print(labels)
-for item in result:
-   
-    if isinstance(item, tuple):
-        print(item)
-        instruction = item[0]
-    
-        args = item[1:]
-     
-        binary_representation = translate_instruction(instruction, args,pc)
-        binary_string+=binary_representation
-        print(binary_representation)  # Aquí obtendrás la representación binaria de cada instrucción
-        
-print(binary_string)
-
-
+# --------------------------------------------------
+# ----- Etapa de creacion de los archivos .mif -----
+# --------------------------------------------------
 
 def createInstructionsMif(binary_string, filename):
     # Open the MIF file for writing
@@ -423,13 +390,43 @@ def createDataMif(text_string, filename):
         # Write the MIF file footer
         f.write("END;\n")
 
-# Example usage
-text_string = "HELLO WORLD"  # Sample text string
-createDataMif(text_string, "data.mif")  # Create MIF file
+# --------------------------------------------------
+# ------------- Controlador de etapas --------------
+# --------------------------------------------------
 
-# Example usage
- 
-createInstructionsMif(binary_string, "instructions.mif")  # Create MIF file
+def compilerController(fileName, inputText):
+    codeWithStalls = groupSentences(addStalls(divideSentences(readFile(fileName))))
+    print(codeWithStalls)
+
+    binaryCode = parse(codeWithStalls)
+    #print(binaryCode)
+    binary_string=''
+    a=0
+    #print(labels)
+    for item in binaryCode:
+    
+        if isinstance(item, tuple):
+            #print(item)
+            instruction = item[0]
+        
+            args = item[1:]
+        
+            binary_representation = translate_instruction(instruction, args,pc)
+            binary_string+=binary_representation
+            #print(binary_representation) 
+            
+    #print(binary_string)
+
+    createDataMif(inputText, "data.mif") 
+    createInstructionsMif(binary_string, "instructions.mif")
+
+# --------------------------------------------------
+# --------------------- Inicio ---------------------
+# --------------------------------------------------
+
+fileName = "prueba.marc" 
+inputText = "HELLO WORLD" 
+compilerController(fileName, inputText)
 
 
 
