@@ -1,0 +1,57 @@
+# Reading pref.tcl
+# do procesador_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack/mux_WB.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:32:45 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/WriteBack/mux_WB.sv 
+# -- Compiling module mux_WB
+# 
+# Top level modules:
+# 	mux_WB
+# End time: 22:32:46 on May 12,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# 
+# vlog -sv -work work +incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench {C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/mux_WB_tb.sv}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 22:32:46 on May 12,2024
+# vlog -reportprogress 300 -sv -work work "+incdir+C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench" C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/testbench/mux_WB_tb.sv 
+# -- Compiling module mux_WB_tb
+# 
+# Top level modules:
+# 	mux_WB_tb
+# End time: 22:32:46 on May 12,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  mux_WB_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" mux_WB_tb 
+# Start time: 22:32:46 on May 12,2024
+# Loading sv_std.std
+# Loading work.mux_WB_tb
+# Loading work.mux_WB
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# Time |  Data0  |  Data1  |  Data2  |  Data3  | Select | Result
+# -------------------------------------------------------------------
+# 30 |   1234  |   0022  |   9abc  |   def0  |    0   |   9abc
+# 40 |   1234  |   0022  |   9abc  |   def0  |    1   |   1234
+# 50 |   1234  |   0022  |   9abc  |   def0  |    2   |   0022
+# 60 |   1234  |   0022  |   9abc  |   def0  |    3   |   9abc
+# Break key hit
+# Simulation stop requested.
+# End time: 22:33:33 on May 12,2024, Elapsed time: 0:00:47
+# Errors: 0, Warnings: 0
