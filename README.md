@@ -8,6 +8,8 @@
 
 
 # **Instrucciones de Uso**
+
+## Procesador: 
 1. Se debe comenzar por descargar el código disponible en [GitHub](https://github.com/mjcarranza/Proyecto-2-Arqui1/tree/procesador).
 
 2. Se debe instalar [Quartus Prime](https://www.intel.la/content/www/xl/es/products/details/fpga/development-tools/quartus-prime.html).
@@ -20,3 +22,22 @@
 
 6. Se debe cargar el proyecto ya compilado a la FPGA.
 
+
+## Compilador:
+
+### Preparación del código y del archivo de entrada:
+1. Asegúrate de tener un archivo de código Assembly en formato .marc. Este archivo debe contener el código que deseas compilar.
+2. Prepara un archivo de entrada que desees usar para pruebas. Este archivo debe contener el texto que deseas procesar, como en el ejemplo proporcionado, donde el texto es "HELLO WORLD".
+
+### Ejecución del compilador:
+1. Ejecuta la función compilerController(fileName, inputText) proporcionando el nombre del archivo .marc y el texto de entrada como argumentos. Por ejemplo:
+python
+Copy code
+fileName = "test.marc" inputText = "HELLO WORLD" compilerController(fileName, inputText) 
+
+### Revisión de los archivos generados:
+1. Una vez que el compilador haya terminado de ejecutarse, verificará el código, lo compilará y generará dos archivos .mif: uno para las instrucciones y otro para los datos.
+2. Los archivos generados serán instructions.mif para las instrucciones y data.mif para los datos.
+
+### Implementación en el hardware:
+1. Los archivos .mif generados pueden ser utilizados en sistemas que acepten este formato para la programación de memorias ROM o similares.
