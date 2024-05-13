@@ -1,16 +1,16 @@
-Fitter Status : Successful - Tue May 07 01:17:48 2024
+Fitter Status : Successful - Sun May 12 20:44:03 2024
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : procesador
 Top-level Entity Name : procesador
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 18 / 32,070 ( < 1 % )
-Total registers : 26
-Total pins : 31 / 457 ( 7 % )
+Logic utilization (in ALMs) : 362 / 32,070 ( 1 % )
+Total registers : 549
+Total pins : 32 / 457 ( 7 % )
 Total virtual pins : 0
-Total block memory bits : 0 / 4,065,280 ( 0 % )
-Total RAM Blocks : 0 / 397 ( 0 % )
+Total block memory bits : 528,384 / 4,065,280 ( 13 % )
+Total RAM Blocks : 65 / 397 ( 16 % )
 Total DSP Blocks : 0 / 87 ( 0 % )
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0

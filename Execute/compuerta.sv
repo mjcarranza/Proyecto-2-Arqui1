@@ -7,19 +7,19 @@ module compuerta (
 
     always @* begin
         // AND gate 1
-        resAND1 = !zeroE & !negative;
+        resAND1 = !zeroE && !negative;
 		  
 		  // And gate 2
-		  resAND2 = zeroE & !negative;
+		  resAND2 = zeroE && !negative;
 		  
 		  // or gate 1
-		  resOR1 = resAND1 | resAND2;
+		  resOR1 = resAND1 || resAND2;
 		  
 		  // And gate 3
-		  resAND3 = resOR1 & branchE;
+		  resAND3 = resOR1 && branchE;
         
         // OR gate
-        pcSrcE = jumpE | resAND3;
+        pcSrcE = jumpE || resAND3;
     end
 
 endmodule

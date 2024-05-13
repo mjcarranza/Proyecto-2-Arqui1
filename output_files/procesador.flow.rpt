@@ -1,5 +1,5 @@
 Flow report for procesador
-Tue May 07 14:34:37 2024
+Sun May 12 22:32:35 2024
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,10 +41,10 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Flow Summary                                                              ;
 +-----------------------------+---------------------------------------------+
-; Flow Status                 ; Successful - Tue May 07 14:34:37 2024       ;
+; Flow Status                 ; Successful - Sun May 12 22:32:35 2024       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; procesador                                  ;
-; Top-level Entity Name       ; procesador                                  ;
+; Top-level Entity Name       ; mux_WB                                      ;
 ; Family                      ; Cyclone V                                   ;
 ; Device                      ; 5CSEMA5F31C6                                ;
 ; Timing Models               ; Final                                       ;
@@ -63,7 +63,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/07/2024 14:34:29 ;
+; Start date & time ; 05/12/2024 22:31:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; procesador          ;
 +-------------------+---------------------+
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id         ;
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
-; COMPILER_SIGNATURE_ID                ; 1095957914728.171511406928876          ; --            ; --          ; --                 ;
+; COMPILER_SIGNATURE_ID                ; 1095957914728.171557471131484          ; --            ; --          ; --                 ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; shiftLPC_tb        ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; IF_ID_Reg_tb       ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; procesador_tb      ;
@@ -87,12 +87,15 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; extend_tb          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; ID_EXE_Reg_tb      ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; aluFlags_tb        ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; mux_WB_tb          ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; execute_tb         ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; mux2_1_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; contador_tb        ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; decode_tb          ;
+; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; alu_tb             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; IMem_tb            ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; sumador_tb         ;
-; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; procesador_tb                          ; --            ; --          ; eda_simulation     ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; mux_WB_tb                              ; --            ; --          ; eda_simulation     ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Systemverilog Hdl                      ; --            ; --          ; eda_simulation     ;
 ; EDA_SIMULATION_TOOL                  ; ModelSim-Altera (SystemVerilog)        ; <None>        ; --          ; --                 ;
 ; EDA_TEST_BENCH_ENABLE_STATUS         ; TEST_BENCH_MODE                        ; --            ; --          ; eda_simulation     ;
@@ -108,9 +111,12 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_FILE                  ; testbench/extend_tb.sv                 ; --            ; --          ; extend_tb          ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/ID_EXE_Reg_tb.sv             ; --            ; --          ; ID_EXE_Reg_tb      ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/aluFlags_tb.sv               ; --            ; --          ; aluFlags_tb        ;
+; EDA_TEST_BENCH_FILE                  ; testbench/mux_WB_tb.sv                 ; --            ; --          ; mux_WB_tb          ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/execute_tb.sv                ; --            ; --          ; execute_tb         ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/mux2_1_tb.sv                 ; --            ; --          ; mux2_1_tb          ;
+; EDA_TEST_BENCH_FILE                  ; testbench/contador_tb.sv               ; --            ; --          ; contador_tb        ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/decode_tb.sv                 ; --            ; --          ; decode_tb          ;
+; EDA_TEST_BENCH_FILE                  ; testbench/alu_tb.sv                    ; --            ; --          ; alu_tb             ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/IMem_tb.sv                   ; --            ; --          ; IMem_tb            ;
 ; EDA_TEST_BENCH_FILE                  ; testbench/sumador_tb.sv                ; --            ; --          ; sumador_tb         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; shiftLPC_tb                            ; --            ; --          ; shiftLPC_tb        ;
@@ -125,9 +131,12 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_MODULE_NAME           ; extend_tb                              ; --            ; --          ; extend_tb          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; ID_EXE_Reg_tb                          ; --            ; --          ; ID_EXE_Reg_tb      ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; aluFlags_tb                            ; --            ; --          ; aluFlags_tb        ;
+; EDA_TEST_BENCH_MODULE_NAME           ; mux_WB_tb                              ; --            ; --          ; mux_WB_tb          ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; execute_tb                             ; --            ; --          ; execute_tb         ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; mux2_1_tb                              ; --            ; --          ; mux2_1_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; contador_tb                            ; --            ; --          ; contador_tb        ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; decode_tb                              ; --            ; --          ; decode_tb          ;
+; EDA_TEST_BENCH_MODULE_NAME           ; alu_tb                                 ; --            ; --          ; alu_tb             ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; IMem_tb                                ; --            ; --          ; IMem_tb            ;
 ; EDA_TEST_BENCH_MODULE_NAME           ; sumador_tb                             ; --            ; --          ; sumador_tb         ;
 ; EDA_TEST_BENCH_NAME                  ; compuerta_tb                           ; --            ; --          ; eda_simulation     ;
@@ -147,17 +156,21 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TEST_BENCH_NAME                  ; execute_tb                             ; --            ; --          ; eda_simulation     ;
 ; EDA_TEST_BENCH_NAME                  ; aluFlags_tb                            ; --            ; --          ; eda_simulation     ;
 ; EDA_TEST_BENCH_NAME                  ; procesador_tb                          ; --            ; --          ; eda_simulation     ;
+; EDA_TEST_BENCH_NAME                  ; contador_tb                            ; --            ; --          ; eda_simulation     ;
+; EDA_TEST_BENCH_NAME                  ; alu_tb                                 ; --            ; --          ; eda_simulation     ;
+; EDA_TEST_BENCH_NAME                  ; mux_WB_tb                              ; --            ; --          ; eda_simulation     ;
 ; EDA_TIME_SCALE                       ; 1 ps                                   ; --            ; --          ; eda_simulation     ;
 ; MAX_CORE_JUNCTION_TEMP               ; 85                                     ; --            ; --          ; --                 ;
 ; MIN_CORE_JUNCTION_TEMP               ; 0                                      ; --            ; --          ; --                 ;
-; MISC_FILE                            ; Memory/DataMem_bb.v                    ; --            ; --          ; --                 ;
 ; MISC_FILE                            ; InstructionFetch/IMem_bb.v             ; --            ; --          ; --                 ;
-; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; --          ; Top                ;
-; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; --          ; Top                ;
-; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; --          ; Top                ;
+; MISC_FILE                            ; Memory/DataMemory_bb.v                 ; --            ; --          ; --                 ;
+; PARTITION_COLOR                      ; -- (Not supported for targeted family) ; --            ; mux_WB      ; Top                ;
+; PARTITION_FITTER_PRESERVATION_LEVEL  ; -- (Not supported for targeted family) ; --            ; mux_WB      ; Top                ;
+; PARTITION_NETLIST_TYPE               ; -- (Not supported for targeted family) ; --            ; mux_WB      ; Top                ;
 ; POWER_BOARD_THERMAL_MODEL            ; None (CONSERVATIVE)                    ; --            ; --          ; --                 ;
 ; POWER_PRESET_COOLING_SOLUTION        ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                 ;
 ; PROJECT_OUTPUT_DIRECTORY             ; output_files                           ; --            ; --          ; --                 ;
+; TOP_LEVEL_ENTITY                     ; mux_WB                                 ; procesador    ; --          ; --                 ;
 +--------------------------------------+----------------------------------------+---------------+-------------+--------------------+
 
 
@@ -166,8 +179,8 @@ https://fpgasoftware.intel.com/eula.
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name            ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Elaboration ; 00:00:08     ; 1.0                     ; 4791 MB             ; 00:00:05                           ;
-; Total                  ; 00:00:08     ; --                      ; --                  ; 00:00:05                           ;
+; Analysis & Elaboration ; 00:00:45     ; 1.0                     ; 4787 MB             ; 00:00:05                           ;
+; Total                  ; 00:00:45     ; --                      ; --                  ; 00:00:05                           ;
 +------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

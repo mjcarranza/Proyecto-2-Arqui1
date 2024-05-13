@@ -30,9 +30,9 @@ module decode_tb;
     initial begin
         // Inicialización de señales
         clk = 0;
-        rst = 1;  // Iniciar en reset`
+        rst = 1;  // Iniciar en reset
         regWriteWB = 0;
-        inst = 16'h0523;
+        inst = 16'h6103;
         PCPlus2 = 16'h0002;
         resultWB = 16'h0000;
         RdestW = 4'h0;

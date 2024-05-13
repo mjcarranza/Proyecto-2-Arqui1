@@ -27,7 +27,7 @@ module register_file(input logic clk, rst, regWrite,
 			registers[10] <= 16'd0;
 			registers[11] <= 16'd0;
 			registers[12] <= 16'd0; // registro de ubicación de pixeles (PU) 
-			registers[13] <= 16'd0; // registro para la memoria (SP)
+			registers[13] <= 16'd640; // registro para la memoria (SP)
 			registers[14] <= 16'd0; // registro para el contador del programa (PC)
 			registers[15] <= 16'd0; //
 		end 

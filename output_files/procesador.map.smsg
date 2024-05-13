@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at vgaController.sv(20): always construct contains both blocking and non-blocking assignments File: C:/Users/mario/Documents/GitHub/Proyecto-2-Arqui1/vga/vgaController.sv Line: 20

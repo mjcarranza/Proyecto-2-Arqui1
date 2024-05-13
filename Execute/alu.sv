@@ -17,35 +17,35 @@ module alu(
 			4'b0000: begin 
 				alu_out_temp = A + B; 
 				zeroTemp = 1'b0;
-				negTemp = 1'b1;
+				negTemp = 1'b0;
 			end
 			
 			// caso de la resta
 			4'b0001: begin 
 				alu_out_temp = A - B;
 				zeroTemp = 1'b0;
-				negTemp = 1'b1;
+				negTemp = 1'b0;
 			end
 			
 			// caso de AND
 			4'b0010: begin
-				alu_out_temp = A && B;
+				alu_out_temp = A & B;
 				zeroTemp = 1'b0;
-				negTemp = 1'b1;
+				negTemp = 1'b0;
 			end
 
 			//caso de OR
 			4'b0011: begin
-				alu_out_temp = A || B;
+				alu_out_temp = A | B;
 				zeroTemp = 1'b0;
-				negTemp = 1'b1;
+				negTemp = 1'b0;
 			end
 				
 			//caso de LSL
-			4'b0011: begin 
+			4'b0100: begin 
 				alu_out_temp = A << B;
 				zeroTemp = 1'b0;
-				negTemp = 1'b1;
+				negTemp = 1'b0;
 			end
 
 			//caso de CMP
@@ -71,7 +71,7 @@ module alu(
 
 			//caso de SET
 			4'b0110: begin 
-				alu_out_temp = A + B;  // el resultado es solo A
+				alu_out_temp = A;  // el resultado es solo A
 				zeroTemp = 1'b0;
 				negTemp = 1'b0;
 			end
@@ -122,7 +122,7 @@ module alu(
 			default: begin 
 				alu_out_temp = 16'b0;
 				zeroTemp = 1'b0;
-				negTemp = 1'b1;
+				negTemp = 1'b0;
 			end
 		
 		endcase 

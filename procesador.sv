@@ -1,12 +1,12 @@
-module procesador(input logic clk, rst, rstVga,
+module procesador(input logic clk, rst, rstCont,
 			output logic vgaclk, // 25.175 MHz VGA clock
 			output logic hsync, vsync,
 			output logic sync_b, blank_b, // To monitor & DAC
 			output logic [7:0] r, g, b);
 
-	logic [15:0] pc, pc_out, Inst, PCPlus2F, extended, extendedE, RD1E, RD2E, srcBE;
+	logic [15:0] pc, pc_out, Inst, PCPlus2F, extended, extendedE, RD1E, RD2E, srcBE, nextDir;
 	logic [15:0] pcStageIn, PCD, PCE, pcP2In, PCPlus2D, PCPlus2E, PCPlus2M, PCPlus2W, instDeco, dataDeco1, dataDeco2, resultWB;
-	logic [15:0] aluResM, aluResE, aluResW, writeDataM, writeDataW, readDataM, readDataW, realPc, source, dataD;
+	logic [15:0] aluResM, aluResE, aluResW, writeDataM, writeDataW, readDataM, readDataW, source, dataD, pixeles;
 	logic PCSrcE, memWriteDeco, memWriteE, regWriteWB, regWriteM, regWriteE, regWriteDeco, memWriteM, a1Source;
 	logic jumpDeco, jumpE, branchDeco, branchE, aluSrcDeco, aluSrcE, resultSrcM, zeroE, zeroComp, negE, negComp, procesStop;
 	logic [1:0] resultSrcDeco, resultSrcE, resultSrcW;
@@ -19,12 +19,14 @@ module procesador(input logic clk, rst, rstVga,
 	
 	vga vga_inst(
 				.clk(clk),
-				.rstVga(rstVga),
+				.rst(rst),
+				.pixeles(pixeles),
 				.vgaclk(vgaclk),
 				.hsync(hsync), 
 				.vsync(vsync),
 				.sync_b(sync_b), 
 				.blank_b(blank_b),
+				.readAddress(nextDir),
 				.r(r), 
 				.g(g), 
 				.b(b)
@@ -108,16 +110,12 @@ module procesador(input logic clk, rst, rstVga,
 										.mxSource(source)
 										);
 										
-	// instancia para el sll del pc
-	shiftLPC shift_inst(
-				.pc(instDeco[11:0]),
-            .realPC(realPc)
-				);
+
 	
 	// instancia para el registro decode/execute
 	ID_EXE_Reg decode(.clk(clk),
 							.reset(rst),
-							.pc_in(realPc),
+							.pc_in(instDeco[11:0]),
 							.pc_plus2_in(PCPlus2D),
 							.op1_in(dataD),
 							.op2_in(dataDeco2),
@@ -206,12 +204,17 @@ module procesador(input logic clk, rst, rstVga,
 	
 	// ------------------------------------- Etapa de memoria ------------------------------------ //
 	
+	
 	// instancia de la memoria para datos
-	DataMem dataMem_inst(.address(aluResM),
-								.clock(clk),
-								.data(writeDataM),
-								.wren(memWriteM),
-								.q(readDataM)
+	DataMemory dataMem_inst(.address_a(aluResM), // 16 bits
+								.clock_a(clk),
+								.data_a(writeDataM[7:0]), // 16 bits 8
+								.wren_a(memWriteM),
+								.q_a(readDataM),
+								
+								.address_b(nextDir),
+								.clock_b(vgaclk),
+								.q_b(pixeles)
 								);
 								
 	// instancia del registro de memoria

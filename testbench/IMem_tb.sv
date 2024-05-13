@@ -18,19 +18,19 @@ module IMem_tb;
     // Inicialización
     initial begin
         clock = 1;
-        address = 0;
+        address = 12'h0;
          
         // Ejemplo de lectura de memoria en direcciones específicas
         #10;
-        address = 1; // Cambiar a la dirección que desees leer
+        address = 12'h1; // Cambiar a la dirección que desees leer
         #10;
         $display("Time: %0t, Address: %d, Data: %h", $time, address, q);
         #10; 
-        address = 2; // Cambiar a la dirección que desees leer
+        address = 12'h2; // Cambiar a la dirección que desees leer
         #10;
         $display("Time: %0t, Address: %d, Data: %h", $time, address, q);
         #10;
-        address = 3; // Cambiar a la dirección que desees leer
+        address = 12'h3; // Cambiar a la dirección que desees leer
         #10;
         $display("Time: %0t, Address: %d, Data: %h", $time, address, q);
     end

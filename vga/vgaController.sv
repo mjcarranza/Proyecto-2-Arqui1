@@ -12,6 +12,7 @@ module vgaController #(
 	)
 	(
 				 input logic vgaclk,
+				 output reg [15:0] readAddress,
 				 output logic hsync, vsync, sync_b, blank_b,
 				 output logic [9:0] x, y
 	);
@@ -22,6 +23,11 @@ module vgaController #(
 			x = 0;
 			y++;
 			if(y == VMAX) y = 0;
+		end
+		if (x==0 && y==0) begin
+			readAddress <= 0;
+		end else if (x < 250 && y < 250) begin
+			readAddress++;
 		end
 	end
 	
