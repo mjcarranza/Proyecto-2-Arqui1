@@ -27,6 +27,7 @@
 
 ### Preparación del código y del archivo de entrada:
 1. Asegúrate de tener un archivo de código Assembly en formato .marc. Este archivo debe contener el código que deseas compilar.
+   
 2. Prepara un archivo de entrada que desees usar para pruebas. Este archivo debe contener el texto que deseas procesar, como en el ejemplo proporcionado, donde el texto es "HELLO WORLD".
 
 ### Ejecución del compilador:
@@ -37,6 +38,7 @@ fileName = "test.marc" inputText = "HELLO WORLD" compilerController(fileName, in
 
 ### Revisión de los archivos generados:
 1. Una vez que el compilador haya terminado de ejecutarse, verificará el código, lo compilará y generará dos archivos .mif: uno para las instrucciones y otro para los datos.
+   
 2. Los archivos generados serán instructions.mif para las instrucciones y data.mif para los datos.
 
 ### Implementación en el hardware:
