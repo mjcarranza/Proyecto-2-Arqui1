@@ -42,7 +42,9 @@ def addStalls(sentences):
         codeWithStalls.append(sentences[i])
 
         CurrentInstructionOpCode = sentences[i][0]
-        updateDestinationRegisters(destinationRegisters)
+        if (CurrentInstructionOpCode[len(CurrentInstructionOpCode) - 1] != ':'):
+            updateDestinationRegisters(destinationRegisters)
+
         if(CurrentInstructionOpCode in destinationInstruction):
             destinationRegisters.append([removeComa(sentences[i][1]), 3])
         
