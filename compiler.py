@@ -307,7 +307,7 @@ def translate_instruction(instruction, args , pc):
                 reg1=format(int(args[0][1:]),'04b')# registro1
                 reg2=format(int(args[1][1:]),'04b')# registro1
                 reg3 = format(0, '03b')  # Registro 3
-                binary_instruction += reg1 + reg2 + reg3
+                binary_instruction += reg1 + reg2 + reg3  + "0"
             # rd, #
             else:
                 
@@ -416,23 +416,23 @@ def compilerController(fileName, inputText):
     print(codeWithStalls)
 
     binaryCode = parse(codeWithStalls)
-    #print(binaryCode)
+    print(binaryCode)
     binary_string=''
     a=0
     #print(labels)
     for item in binaryCode:
     
         if isinstance(item, tuple):
-            #print(item)
+            print(item)
             instruction = item[0]
         
             args = item[1:]
         
             binary_representation = translate_instruction(instruction, args,pc)
             binary_string+=binary_representation
-            #print(binary_representation) 
+            print(binary_representation) 
             
-    print(binary_string)
+    #print(binary_string)
 
     createDataMif(inputText, "data.mif") 
     createInstructionsMif(binary_string, "instructions.mif")
