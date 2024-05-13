@@ -4,13 +4,8 @@ _start:
 _stepsHandler:
     set r10, #1                 @ r10: 1
 
-    ldr r4, [r14]               @ r4: 16 bits del contenido del SP
+    ldr r4, [r14]               @ r4: Un byte del contenido del SP (ASCII de un caracter)
     
-    set r0, #0x7F               @ r0: 0x7F
-    lsl r0, r0, r10             @ r0: 0xFE
-    add r0, r0, r10             @ r0: Mascara (0xFF) para tomar el primer byte de r4
-    and r4, r4, r0              @ r4: ASCII de un caracter
-
     cmp r12, #1                 
     beq _stepI:
     cmp r12, #2
@@ -526,13 +521,9 @@ _addPixel2:
     bal _addPixel2:  
 
 _addPixel3:
-    add r8, r13, r9             @ r8: [PU + r9]
-    ldr r9, [r8]                @ r9: 2 bytes de la direccion de r8
-    orr r9, r9, r10             @ r9: 2 bytes de la direccion de r8, pero con el LSB en 1       
-    str r9, [r8]                @ Se almacena en [PU + r9] un 1 para representar un pixel negro
+    add r8, r13, r9             @ r8: [PU + r9]    
+    str r10, [r8]               @ Se almacena en [PU + r9] un 1 para representar un pixel negro
     bal _bresenhamWhile2:
     
 _exit:
-    @ Ultima instruccion
-
-    set r10, #0
+    end

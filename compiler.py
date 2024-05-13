@@ -34,39 +34,48 @@ def addStalls(sentences):
     destinationRegisters = []
     stalls = []
 
-    destinationInstruction = ["set", "add", "sub", "and", "orr", "lsl", "ldr"]
-    operandInstruction = ["add", "sub", "and", "orr", "lsl", "cmp", "str"]
+    destinationInstruction = ["add", "sub", "and", "orr", "lsl", "set", "ldr"]
+    operandInstruction = ["add", "sub", "and", "orr", "lsl", "cmp", "set", "ldr", "str"]
     branchInstruction = ["bal", "beq", "bge"]
 
     for i in range (0, len(sentences) - 1):
         codeWithStalls.append(sentences[i])
 
-        CurrentInstructionOpCode = sentences[i][0]
-        if (CurrentInstructionOpCode[len(CurrentInstructionOpCode) - 1] != ':'):
+        currentInstructionOpCode = sentences[i][0]
+        if (currentInstructionOpCode in destinationInstruction or currentInstructionOpCode in branchInstruction or currentInstructionOpCode == "end"):
             updateDestinationRegisters(destinationRegisters)
 
-        if(CurrentInstructionOpCode in destinationInstruction):
-            destinationRegisters.append([removeComa(sentences[i][1]), 3])
-        
-        elif(CurrentInstructionOpCode in branchInstruction):
+            if(currentInstructionOpCode in destinationInstruction):
+                destinationRegisters.append([removeComa(sentences[i][1]), 3])
+            
+            elif(currentInstructionOpCode in branchInstruction):
                 codeWithStalls.append(["not"])
                 codeWithStalls.append(["not"])
+                updateDestinationRegisters(destinationRegisters)
+                updateDestinationRegisters(destinationRegisters)
 
-        stallsNeeded = 0
-        NextInstructionOpCode = sentences[i + 1][0]
-        if(NextInstructionOpCode in operandInstruction):
-            if (NextInstructionOpCode == "cmp" or NextInstructionOpCode == "str"):
-                NextInstructionOperand1 = removeComa(sentences[i + 1][1])
-                NextInstructionOperand2 = NextInstructionOperand1
-
+        nextInstructionOpCode = sentences[i + 1][0]
+        if(nextInstructionOpCode in operandInstruction):
+            stallsNeeded = 0
+            if (nextInstructionOpCode == "cmp" or nextInstructionOpCode == "set"):
+                nextInstructionOperand1 = removeComa(sentences[i + 1][1])
+                nextInstructionOperand2 = sentences[i + 1][2]
+                if(nextInstructionOperand2[0] == "#"):
+                    nextInstructionOperand2 = nextInstructionOperand1
+            elif (nextInstructionOpCode == "ldr"):
+                nextInstructionOperand2 = removeSquareBrackets(sentences[i + 1][2])
+                nextInstructionOperand1 = nextInstructionOperand1
+            elif (nextInstructionOpCode == "str"):
+                nextInstructionOperand1 = removeComa(sentences[i + 1][1])
+                nextInstructionOperand2 = removeSquareBrackets(sentences[i + 1][2])
             else:
-                NextInstructionOperand1 = removeComa(sentences[i + 1][2])
-                NextInstructionOperand2 = removeComa(sentences[i + 1][3])
+                nextInstructionOperand1 = removeComa(sentences[i + 1][2])
+                nextInstructionOperand2 = sentences[i + 1][3]
 
             for j in range (0, len(destinationRegisters)):
-                if (NextInstructionOperand1 == destinationRegisters[j][0]):
+                if (nextInstructionOperand1 == destinationRegisters[j][0]):
                     stalls.append(destinationRegisters[j][1])
-                if (NextInstructionOperand2 == destinationRegisters[j][0]):
+                if (nextInstructionOperand2 == destinationRegisters[j][0]):
                     stalls.append(destinationRegisters[j][1])
             if (len(stalls) > 0 ):
                 stallsNeeded = max(stalls)
@@ -91,6 +100,12 @@ def removeComa(word):
     else:
         return word  
 
+def removeSquareBrackets(word):
+    if word.startswith('[') and word.endswith(']'):
+        return word[1:-1]
+    else:
+        return word
+    
 # --------------------------------------------------
 # --------- Etapa de traduccion a binario ----------
 # --------------------------------------------------
@@ -417,7 +432,7 @@ def compilerController(fileName, inputText):
             binary_string+=binary_representation
             #print(binary_representation) 
             
-    #print(binary_string)
+    print(binary_string)
 
     createDataMif(inputText, "data.mif") 
     createInstructionsMif(binary_string, "instructions.mif")
@@ -426,7 +441,7 @@ def compilerController(fileName, inputText):
 # --------------------- Inicio ---------------------
 # --------------------------------------------------
 
-fileName = "prueba.marc" 
+fileName = "test.marc" 
 inputText = "HELLO WORLD" 
 compilerController(fileName, inputText)
 
