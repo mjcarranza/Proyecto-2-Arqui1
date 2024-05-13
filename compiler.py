@@ -379,33 +379,27 @@ def createInstructionsMif(binary_string, filename):
         # Write the MIF file footer
         f.write("END;\n")
 
-def createDataMif(text_string, filename):
-    # Open the MIF file for writing
-    with open(filename, 'w') as f:
-        # Write the MIF file header
-        f.write("WIDTH=16;\n")
+def createDataMif(input_string, output_file):
+    # Abrir el archivo .mif para escribir
+    with open(output_file, 'w') as f:
+        # Escribir las cabeceras del archivo .mif
+        f.write("WIDTH=8;\n")
         f.write("DEPTH=640;\n")
         f.write("\n")
         f.write("ADDRESS_RADIX=UNS;\n")
-        f.write("DATA_RADIX=UNS;\n")
-        f.write("\n")
+        f.write("DATA_RADIX=DEC;\n\n")
         f.write("CONTENT BEGIN\n")
-        
-        # Iterate over the text string in chunks of 2 characters
-        for i in range(0, len(text_string), 2):
-            # Convert characters to ASCII values
-            if i+1 < len(text_string):
-                ascii_value = ord(text_string[i+1]) * 256 + ord(text_string[i])
-            else:
-                ascii_value = ord(text_string[i]) * 256
-            # Write the address and corresponding ASCII value
-            f.write(f"    {i//2}   :   {ascii_value};\n")
-        
-        # Write the default values for remaining addresses
-        f.write("    [{}..639]   : 0;\n".format((len(text_string) // 2)))
-        
-        # Write the MIF file footer
-        f.write("END;\n")
+
+        # Escribir los valores ASCII de cada letra en el archivo .mif
+        for i, char in enumerate(input_string):
+            ascii_value = ord(char)  # Obtener el valor ASCII del caracter
+            f.write("    {}   :   {};\n".format(i, ascii_value))
+
+        # Escribir el resto de las direcciones con valor 0
+        f.write("    [{}..639]   : 0;\n".format(len(input_string)))
+
+        # Cerrar el bloque CONTENT y el archivo .mif
+        f.write("END;")
 
 # --------------------------------------------------
 # ------------- Controlador de etapas --------------
@@ -416,21 +410,21 @@ def compilerController(fileName, inputText):
     print(codeWithStalls)
 
     binaryCode = parse(codeWithStalls)
-    print(binaryCode)
+    #print(binaryCode)
     binary_string=''
     a=0
     #print(labels)
     for item in binaryCode:
     
         if isinstance(item, tuple):
-            print(item)
+            #print(item)
             instruction = item[0]
         
             args = item[1:]
         
             binary_representation = translate_instruction(instruction, args,pc)
             binary_string+=binary_representation
-            print(binary_representation) 
+            #print(binary_representation) 
             
     #print(binary_string)
 
@@ -441,8 +435,8 @@ def compilerController(fileName, inputText):
 # --------------------- Inicio ---------------------
 # --------------------------------------------------
 
-fileName = "test.marc" 
-inputText = "HELLO WORLD" 
+fileName = "archivo.marc" 
+inputText = "MARITO DECIME QUE SE VE" 
 compilerController(fileName, inputText)
 
 
