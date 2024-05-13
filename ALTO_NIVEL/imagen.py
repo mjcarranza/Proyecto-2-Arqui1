@@ -1,6 +1,37 @@
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
-imagen = Image.open("./ALTO_NIVEL/bl.jpeg")
+altura = 250
+ancho = 250
+texto = ""
+ruta_archivo = "./ALTO_NIVEL/archivo.txt"
+
+with open(ruta_archivo, 'r') as archivo:
+    texto = archivo.read()
+
+ruta_imagen = "./ALTO_NIVEL/imagen.png"
+imagen = Image.new('RGB', (ancho, altura), color='black')
+draw = ImageDraw.Draw(imagen)
+
+fuente = ImageFont.load_default()
+
+left, top, right, bottom = fuente.getbbox(texto)
+text_width = right - left
+text_height = bottom - top
+
+x = (ancho - text_width) / 2
+y = (altura - text_height) / 2
+
+draw.text((x, y), texto, fill='white', font=fuente)
+imagen.save(ruta_imagen)
+print("Se crea...........")
+
+
+
+
+#CREACION DEL .MIF
+
+
+imagen = Image.open("./ALTO_NIVEL/imagen.png")
 datos_pixeles = imagen.convert("RGB").tobytes()
 
 
@@ -20,8 +51,3 @@ with open("./ALTO_NIVEL/imagen.mif", "w") as archivo_mif:
             archivo_mif.write("   {:d} : {:s};\n".format(direccion_decimal, valor_hex))  # Escribimos la dirección en decimal
 
     archivo_mif.write("END;")
-
-
-
-# Ejemplo de uso
-#image_to_mif("./ALTO_NIVEL/negro.jpeg", "./ALTO_NIVEL/imagen.mif")
